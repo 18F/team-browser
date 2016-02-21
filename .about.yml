@@ -1,0 +1,31 @@
+---
+name: team-browser
+full_name: 18F Team Browser
+short_name: team-browser
+type: docs
+owner_type: project
+status: active
+stage: alpha
+testable: true
+mission: >
+  The 18F Team Browser is a Jekyll-based documentation platform for easy
+  review and searching of information about 18F team members.  It is part
+  of the overall 18F Hub project.
+links:
+- url: https://team-browser.18f.gov/
+  text: 18F Team Browser production instance
+- url: https://team-browser.18f.gov/team-browser/
+  text: 18F Public Team Browser staging instance
+- url: https://18f.gsa.gov/team-browser/
+  text: 18F Public Hub production instance
+tasks: https://github.com/18F/team-browser/issues
+team:
+- github: mbland
+- github: afeld
+- github: melodykramer
+- github: mtorres253
+- github: catherinedevlin
+licenses:
+  .about.yml:
+    name: CC0
+    url: https://github.com/18F/team-browser/blob/master/LICENSE.md

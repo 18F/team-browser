@@ -1,0 +1,87 @@
+---
+title: Table of Contents
+layout: team
+---
+{% assign members = site.data.team %}
+    <main role="main" class="filters-results">
+      <div class="wrapper">
+        <aside class="filters">
+          <h1>Filters</h1>
+          <form>
+            <div class="field field-name">
+              <label>
+                <span class="label-text">Name</span>
+                <input type="search">
+              </label>
+            </div>
+            <fieldset class="fieldset fieldset-locations">
+              <legend>Location</legend>
+              <div class="fieldset-wrapper">
+                {% assign locations = site.data.locations | sort:"label" %}
+                {% for location in locations %}
+                <div class="field field-checkbox">
+                  <label>
+                    <input type="checkbox" name="{{ location.code }}">
+                    <span class="label-text">{{ location.label }}
+                    ({{ location.team.size }})</span>
+                  </input>
+                  </label>
+                </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+            <fieldset class="fieldset fieldset-skills">
+              <legend>Skills</legend>
+              <div class="fieldset-wrapper">
+                {% assign skills = site.data.skills | sort:"name" %}
+                {% for skill in skills %}
+                <div class="field field-checkbox">
+                  <label>
+                    <input type="checkbox" name="{{ skill.slug }}">
+                    <span class="label-text">{{ skill.name }}
+                    ({{ skill.members.size }})</span>
+                  </input>
+                  </label>
+                </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+            <fieldset class="fieldset fieldset-interests">
+              <legend>Interests</legend>
+              <div class="fieldset-wrapper">
+                {% assign interests = site.data.interests | sort:"name" %}
+                {% for interest in interests %}
+                <div class="field field-checkbox">
+                  <label>
+                    <input type="checkbox" name="{{ interest.slug }}">
+                    <span class="label-text">{{ interest.name }}
+                    ({{ interest.members.size }})</span>
+                  </input>
+                  </label>
+                </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+            <button type="submit">Filter</button>
+          </form>
+        </aside>
+        <section class="results">
+          <h1><span class="count">{{ members.size }}</span> team members</h1>
+          <form>
+            <div class="field">
+              <label>
+                <span class="label-text">Group by</span>
+                <select>
+                  <option>Location</option>
+                  <option>Project</option>
+                  <option>Skills</option>
+                  <option>Interests</option>
+                </select>
+              </label>
+            </div>
+            <button type="submit">Change grouping</button>
+          </form>
+          {% include team_members.html %}
+        </section>
+      </div>
+    </main>

@@ -1,0 +1,50 @@
+---
+layout: bare
+---
+{% assign proj = page.project %}
+
+<div>
+
+	<h1>{{ proj.full_name }}</h1>
+
+	{% if proj.description %}
+		<p>
+		{{ proj.description }}
+		</p>
+	{% endif %}
+
+	{% unless proj.status == "Hold" %}
+	<p><a href="https://18f.gsa.gov/dashboard/project/{{ proj.name }}">Public Dashboard</a></p>{% endunless %}
+
+	{% if proj.github and proj.github.length != 0 %}
+	<section class="hub-page-section">
+
+		<h1>GitHub Repos</h1>
+		<ul>
+			{% assign github_class = proj.github | class_name %}
+			{% if github_class == 'Hash' %}
+				<li><a href="https://github.com/{{ proj.github.name }}">{{ proj.github.name }}</a></li>
+		  {% else %}
+			  {% for repo in proj.github %}
+  				<li><a href="https://github.com/{{ repo }}">{{ repo }}</a></li>
+				{% endfor %}
+			{% endif %}
+		</ul>
+
+	</section>
+	{% endif %}
+
+	{% if proj.team and proj.team.length != 0 %}
+	<section class="hub-page-section">
+
+	<h1>Team Members</h1>
+	<ul>
+		{% for i in proj.team %}
+			<li><a href="{{ site.baseurl }}/team/{{ i.name | canonicalize }}">{{ i.full_name }}</a></li>
+		{% endfor %}
+	</ul>
+
+	</section>
+	{% endif %}
+
+</div>

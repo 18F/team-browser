@@ -1,0 +1,11 @@
+---
+layout: bare
+---
+<h1>Skills</h1>
+
+{% assign skills = site.data.skills | sort:"name" %}
+<ul>
+  {% for skill in skills %}
+    <li><a href="{{ site.baseurl }}/skills/{{ skill.slug | cgi_escape }}">{{ skill.name }}</a></li>
+  {% endfor %}
+</ul>

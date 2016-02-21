@@ -1,0 +1,30 @@
+<header class="site-header">
+  <div class="wrapper">
+    <div class="stage-bug">
+      <span class="sr-only">This site is in alpha. <a href="https://18f.gsa.gov/dashboard/stages/">Learn more here.</a></span>
+    </div>
+    <h1 class="logo"><a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/images/logo/18F-Logo-M.png" alt="18F"> Hub</a></h1>
+    <form>
+      <div class="field">
+        <label>
+          <span class="label-text">Query</span>
+          <input type="search">
+        </label>
+      </div>
+      <button>Search</button>
+    </form>
+    {% unless site.public %}
+      <div class="signed-in">
+        <h1>Signed in as</h1>
+        <img src="{{site.baseurl}}/images/andrew_maier.jpg" alt="Andrew Maier">
+        <span>Andrew Maier</span>
+        <a href="#">Sign out</a>
+      </div>
+    {% endunless %}
+  </div>
+</header>
+<header class="banner">
+  <div class="wrapper">
+    <h1>Team API Browser</h1>
+  </div>
+</header>
