@@ -1,5 +1,8 @@
 _site/
+_site_public/
 .sass-cache/
 .jekyll-metadata
 .jekyll-assets-cache/
 node_modules/
+coverage/
+
