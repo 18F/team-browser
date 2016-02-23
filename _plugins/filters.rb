@@ -21,13 +21,20 @@ module Hub
   # Contains Hub-specific Liquid filters.
   module Filters
 
+    def img_file_path(name, site)
+      File.join(site['team_img_dir'], "#{name}.jpg")
+    end
+
+    def photo_exists_in(name, site)
+      File.exists? img_file_path(name, site)
+    end
+
     # URL of team member's photo, or to the substitute image
     # when their photo is missing
     def photo_or_placeholder(name, site)
       base = site['baseurl'] || ''
-      img_file_path = File.join(site['team_img_dir'], "#{name}.jpg")
-      if File.exists? img_file_path
-        return File.join(base, img_file_path)
+      if photo_exists_in(name, site)
+        return File.join(base, img_file_path(name, site))
       end
       File.join(base, site['team_img_dir'], site['missing_team_member_img'])
     end
