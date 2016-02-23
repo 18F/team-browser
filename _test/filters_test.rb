@@ -12,7 +12,7 @@ module Hub
     include Filters
 
     @@sample_team_member_name = 'sample.teammember'
-    @@image_directory_name = File.join("_test", "tmp")
+    @@image_directory_name = File.join("_test", "temp")
     @@imagefile_path = File.join(@@image_directory_name, "#{@@sample_team_member_name}.jpg")
     @@site = {'team_img_dir' => @@image_directory_name,
       'missing_team_member_img' => 'no_image.jpg'}
