@@ -53,7 +53,7 @@ scripts:
       {% if member.interests %}
       <h2>Interests</h2>
       {% for interest in member.interests %}
-      <a href="{{ site.baseurl }}/interests/?{{ interest.name | downcase | strip | uri_escape }}">{{ interest.name }}</a><br/>
+      <a href="{{ site.baseurl }}/interests/{{ interest.slug | cgi_escape }}">{{ interest.name }}</a><br/>
       {% endfor %}
       {% endif %}
     </div>

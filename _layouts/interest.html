@@ -1,0 +1,22 @@
+---
+layout: bare
+---
+{% assign interest = page.interest %}
+
+<div>
+
+	<h1>Interest: {{ interest.name }}</h1>
+
+	{% if interest.members and interest.members.length != 0 %}
+	<section class="hub-page-section">
+
+	<ul>
+		{% for i in interest.members %}
+			<li><a href="{{ site.baseurl }}/team/{{ i.name | canonicalize }}">{{ i.full_name }}</a></li>
+		{% endfor %}
+	</ul>
+
+	</section>
+	{% endif %}
+
+</div>
