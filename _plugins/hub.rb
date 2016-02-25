@@ -50,7 +50,7 @@ module Hub
       # Auth.generate_artifacts(site)
       Team.generate_pages(site)
       Projects.generate_pages(site)
-      # Departments.generate_pages(site)
+      Departments.generate_pages(site)
       WorkingGroups.generate_pages(site)
       Skills.generate_pages(site)
       Interests.generate_pages(site)
