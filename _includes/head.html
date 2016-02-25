@@ -51,7 +51,7 @@
 
   <!-- CSS
   ================================================== -->
-  <style>{% asset normalize.css %}
+  <style>
   {% asset fonts.css %}
   {% for sheet_url in page.stylesheets %}
   {{ sheet_url | split:"/" | last | asset }}

@@ -1369,6 +1369,7 @@ a[id]{
 	color: #fff8ce;
 	padding: 1em 0 1.1em;
 	border-top: 1px solid #555;
+        text-decoration: none;
 }
 
 .layout-team-api .banner p{
