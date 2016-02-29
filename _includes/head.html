@@ -11,11 +11,9 @@
   <script src="https://use.typekit.net/izz0lvj.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
-  <script src="{% asset_path jquery-2.1.4.min.js %}"></script>
-  <script src="{% asset_path application.js %}"></script>
+  <script src="{{ {{ site.baseurl }}/assets/js/application.js }}"></script>
 
   <!-- styles from Andrew's prototype -->
-  <!--link rel="stylesheet" type="text/css" href="{% asset_path reset.css %}"-->
   <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/stylesheets/screen.css">
 
   <!-- styles from earlier Hub work -->
@@ -52,7 +50,7 @@
   <!-- CSS
   ================================================== -->
   <style>
-  {% asset fonts.css %}
+  <link href="{{ site.baseurl }}/assets/css/fonts.css" rel="stylesheet" type="text/css">
   {% for sheet_url in page.stylesheets %}
   {{ sheet_url | split:"/" | last | asset }}
   {% endfor %}</style>
