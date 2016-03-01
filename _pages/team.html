@@ -21,7 +21,9 @@ layout: team
                 {% for location in locations %}
                 <div class="field field-checkbox">
                   <label>
-                    <input type="checkbox" name="{{ location.code }}">
+                    <input type="checkbox" name="{{ location.code }}"
+                           onclick="checkbox_clicked()"
+                           param-key="locations">
                     <span class="label-text">{{ location.label }}
                     ({{ location.team.size }})</span>
                   </input>
@@ -37,7 +39,9 @@ layout: team
                 {% for skill in skills %}
                 <div class="field field-checkbox">
                   <label>
-                    <input type="checkbox" name="{{ skill.slug }}">
+                    <input type="checkbox" name="{{ skill.slug }}"
+                           onclick="checkbox_clicked()"
+                           param-key="skills">
                     <span class="label-text">{{ skill.name }}
                     ({{ skill.members.size }})</span>
                   </input>
@@ -53,7 +57,9 @@ layout: team
                 {% for interest in interests %}
                 <div class="field field-checkbox">
                   <label>
-                    <input type="checkbox" name="{{ interest.slug }}">
+                    <input type="checkbox" name="{{ interest.slug }}"
+                           onclick="checkbox_clicked()"
+                           param-key="interests">
                     <span class="label-text">{{ interest.name }}
                     ({{ interest.members.size }})</span>
                   </input>
@@ -85,3 +91,17 @@ layout: team
         </section>
       </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/urljs/1.2.0/url.min.js"></script>
+    <script type = "text/javascript" src="synch_url_params_to_checkboxes.js"></script>
+    <script type = "text/javascript" src="team_members.js"></script>
+    <script type = "text/javascript">
+       function checkbox_clicked() {
+         set_url_params_to_checkboxes();
+         filter_members();
+       };
+
+       $(document).ready(function(){
+         set_checkboxes_to_url_params();
+         filter_members();
+       });
+    </script>
