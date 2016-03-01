@@ -23,9 +23,8 @@ layout: team
                   <label>
                     <input type="checkbox" name="{{ location.code }}"
                            onclick="checkbox_clicked()"
-                           param-key="locations">
-                    <span class="label-text">{{ location.label }}
-                    ({{ location.team.size }})</span>
+                    <a href="{{ site.baseurl }}/locations/#{{ location.code }}" class="label-text">{{ location.label }}
+                    ({{ location.team.size }})</a>
                   </input>
                   </label>
                 </div>
@@ -42,8 +41,8 @@ layout: team
                     <input type="checkbox" name="{{ skill.slug }}"
                            onclick="checkbox_clicked()"
                            param-key="skills">
-                    <span class="label-text">{{ skill.name }}
-                    ({{ skill.members.size }})</span>
+                    <a href="{{ site.baseurl }}/skills/{{ skill.slug }}/" class="label-text">{{ skill.name }}
+                    ({{ skill.members.size }})</a>
                   </input>
                   </label>
                 </div>
@@ -60,8 +59,8 @@ layout: team
                     <input type="checkbox" name="{{ interest.slug }}"
                            onclick="checkbox_clicked()"
                            param-key="interests">
-                    <span class="label-text">{{ interest.name }}
-                    ({{ interest.members.size }})</span>
+                    <a href="{{ site.baseurl }}/interests/{{ interest.slug }}/" class="label-text">{{ interest.name }}
+                    ({{ interest.members.size }})</a>
                   </input>
                   </label>
                 </div>
