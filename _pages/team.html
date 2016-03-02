@@ -23,6 +23,7 @@ layout: team
                   <label>
                     <input type="checkbox" name="{{ location.code }}"
                            onclick="checkbox_clicked()"
+                           param-key="locations">
                     <a href="{{ site.baseurl }}/locations/#{{ location.code }}" class="label-text">{{ location.label }}
                     ({{ location.team.size }})</a>
                   </input>
@@ -91,8 +92,8 @@ layout: team
       </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/urljs/1.2.0/url.min.js"></script>
-    <script type = "text/javascript" src="synch_url_params_to_checkboxes.js"></script>
-    <script type = "text/javascript" src="team_members.js"></script>
+    <script type = "text/javascript" src="{{ site.baseurl }}/assets/js/synch_url_params_to_checkboxes.js"></script>
+    <script type = "text/javascript" src="{{ site.baseurl }}/assets/js/filter_members.js"></script>
     <script type = "text/javascript">
        function checkbox_clicked() {
          set_url_params_to_checkboxes();

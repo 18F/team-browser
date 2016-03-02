@@ -1,9 +1,8 @@
 <div class="team-members">{% for member in members %}
   <article class="person"
-    characteristics-location="{{ member.skills.location }}"
-    characteristics-skills="{{ member.skills.join(',') }}"
-    characteristics-interests="{{ member.skills.join(',') }}"
-    >
+   characteristics-location="{{ member.location }}"
+   characteristics-skills="{{ member.skills | map: 'slug' | join: ',' }}"
+   characteristics-interests="{{ member.interests | map: 'slug' | join: ',' }}" >
     <div class="team-member-cell">
       {% assign photo_exists = member.name | photo_exists_in:site %}
       <a href="{{ site.baseurl }}/team/{{ member.name | canonicalize }}">
