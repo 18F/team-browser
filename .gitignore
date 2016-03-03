@@ -8,4 +8,4 @@ node_modules/
 coverage/
 set_hmac_auth.sh
 set_hmac_key.sh
-
+vagrant/.vagrant/
