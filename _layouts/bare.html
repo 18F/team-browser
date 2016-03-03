@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
   {% include head.html %}
-</head>
   <body class="layout-team-api" itemscope itemtype="http://schema.org/WebPage">
-    <section class="container bare">
-      {% include header.html %}
-      {{ content }}
-    </section>
-  {% include footer.html %}
+    {% include site-header.html %}
+    <main role="main">
+      <div class="wrapper">
+        {{ content }}
+      </div>  
+    </main>
+  {% include site-footer.html %}
   </body>
 {% include scripts.html %}
 </html>
