@@ -5,4 +5,5 @@ _site_public/
 .jekyll-assets-cache/
 node_modules/
 coverage/
-
+set_hmac_auth.sh
+vagrant/.vagrant/
