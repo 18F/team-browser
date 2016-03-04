@@ -929,6 +929,39 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	border-radius: 100%
 }
 
+@media screen and (min-height: 640px) and (min-width: 808.4211px){ 
+	.layout-team-api{
+		overflow: hidden;
+	}
+	
+	.layout-team-api .site-header{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+	}
+
+	.layout-team-api .filters-results .filters{
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 56px;
+		height: 16em;	
+	}
+	
+	.layout-team-api .filters-results .results{
+		position: absolute;
+		top: 17.33em;
+		bottom: 0;
+		overflow: auto;
+		background: white;
+	}
+	.layout-team-api .site-footer{
+		display: none;
+	}
+}
+
+
 @media screen and (min-width: 538.9474px){ 
 
 	.layout-team-api .filters form::after{
