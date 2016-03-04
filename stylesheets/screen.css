@@ -119,6 +119,11 @@ input[type=checkbox]{
 	border: none;
 }
 
+.ng-scope form button{
+	position: absolute;
+	left: -999em;
+}
+
 button,
 .button {
 	background: none;
@@ -186,25 +191,44 @@ main div.field-select.is-focused::after{
 
 }
 
-div.field.field-checkbox span.label-text,
-div.field.field-radio span.label-text,
-div.field.field-radio input{ 
-	display: inline; 
-	vertical-align: middle;
+div.field.field-checkbox label{
+	position: relative;
+	padding: 0.3em 2em 0.4em 1.6em;
+	line-height: 1;
+	border-bottom: 1px solid #f3f3f3;
+	display: block;
 }
 
-div.field.field-checkbox{
-	position: relative;
-	padding: 0.125em 0 0.2em 1.4em;
-	border-bottom: 1px solid #f3f3f3;
+div.field.field-checkbox span.label-text,
+div.field.field-radio span.label-text{ 
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin: 0;
+}
+
+div.field.field-checkbox label span.count{
+	position: absolute;
+	right: 6px;
+	background: #eee;
+	min-width: 2em;
+	text-align: center;
+	border-radius: 99em;
+	font-size: 11px;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 8px;
+	font-family: Lucida Grande;
+	color: #555;
 }
 
 div.field.field-checkbox input{ 
 	font-size: 1em;	
 	line-height: 1;
 	position: absolute;
-	left: 0.125em;
-	top: 0.175em;
+	left: 4px;
+	top: 5px;
 }
 
 
@@ -219,9 +243,11 @@ fieldset {
 	padding: 16px;
 	padding-bottom: 19px;
 	position: relative;
-	margin-top: 1.67em;
+	margin-top: 36px;
 	margin-bottom: 1em;
-	border-radius: 4px;
+	border-radius: 2px;
+	background: #fff;
+	min-width: 0;
 }
 
 fieldset.fieldset-locations,
@@ -239,11 +265,15 @@ fieldset.fieldset-interests .field-checkbox:first-of-type{
 
 fieldset.fieldset-locations label,
 fieldset.fieldset-skills label,
-fieldset.fieldset-interests label{ display: block; }
+fieldset.fieldset-interests label,
+fieldset.fieldset-locations label span.label-text,
+fieldset.fieldset-skills label span.label-text,
+fieldset.fieldset-interests label  span.label-text{ display: block; }
 
 fieldset .fieldset-wrapper{
 	max-height: 12em;
 	overflow: auto;
+	margin-right: 1px;
 }
 
 fieldset > legend,
@@ -259,17 +289,16 @@ fieldset > legend,
 
 fieldset > legend{
 	position: absolute;
-	background: white;
 	margin: 0;
 	bottom: 100%;
-	left: 4px;
-	padding: 1px 2px;
+	left: 0;
+	margin-bottom: 4px;
+	padding: 1px 0;
 	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: 600;
 	line-height: 16px;
-	color: #444;
-	border-bottom: 1px solid #999;
+	color: #555;
 }
 
 
@@ -845,9 +874,10 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 }
 
 .layout-team-api .filters-results .results h1{
-	font-size: 20px;
-	font-style: italic;
-	margin-bottom: 1em;
+	font-size: 14px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	color: #555;
 }
 
 .layout-team-api .filters-results .filters h1,
@@ -857,6 +887,9 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 
 .layout-team-api .filters-results .filters{
 	font-size: 16px;
+	background: #f6f6f5;
+	border-bottom: 1px solid #e3e3e3;
+	padding-bottom: 6px;
 }
 
 .layout-team-api .person{
@@ -898,7 +931,7 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 
 @media screen and (min-width: 538.9474px){ 
 
-	.layout-team-api .filters::after{
+	.layout-team-api .filters form::after{
 		content: "";
 		display: table;
 		clear: both;	
@@ -924,8 +957,8 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	.layout-team-api .person,
 	.layout-team-api .person:nth-child(2n+2){	
 		float: left;
-		width: 32%;
-		margin-right: 2%;
+		width: 31.33%;
+		margin-right: 3%;
 	}
 
 	.layout-team-api .filters fieldset.fieldset-interests,
@@ -946,7 +979,7 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	.layout-team-api .person:nth-child(3n+3){	
 		float: left;
 		width: 22%;
-		margin-right: 3%;
+		margin-right: 2.5%;
 	}
 	.layout-team-api .person:nth-child(4n+4){
 		margin-right: 0;
