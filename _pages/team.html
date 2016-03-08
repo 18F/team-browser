@@ -93,3 +93,16 @@ layout: team
     </div>
   </section>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/urljs/1.2.0/url.min.js"></script>
+<script type = "text/javascript" src="{{ site.baseurl }}/assets/js/synch_url_params_to_checkboxes.js"></script>
+<script type = "text/javascript" src="{{ site.baseurl }}/assets/js/filter_members.js"></script>
+<script type = "text/javascript">
+   function checkbox_clicked() {
+     set_url_params_to_checkboxes();
+     filter_members();
+   };
+   $(document).ready(function(){
+     set_checkboxes_to_url_params();
+     filter_members();
+   });
+</script>
