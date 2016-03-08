@@ -1,8 +1,8 @@
 {% for member in members %}
   <article class="person"
-   characteristics-location="{{ member.location }}"
-   characteristics-skills="{{ member.skills | map: 'slug' | join: ',' }}"
-   characteristics-interests="{{ member.interests | map: 'slug' | join: ',' }}" >
+   data-location="{{ member.location }}"
+   data-skills="{{ member.skills | map: 'slug' | join: ',' }}"
+   data-interests="{{ member.interests | map: 'slug' | join: ',' }}" >
    {% assign photo_exists = member.name | photo_exists_in:site %}
       <a href="{{ site.baseurl }}/team/{{ member.name | canonicalize }}">
       {{ member.full_name }}

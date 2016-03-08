@@ -15,7 +15,7 @@ function filter_members() {
 function hidePeopleNotInOneOf(locations) {
   var locations = locations.split(',');
   $('article.person').each(function() {
-    if (locations.indexOf($(this).attr('characteristics-location')) == -1) {
+    if (locations.indexOf($(this).attr('data-location')) == -1) {
       $(this).hide();
     };
   });
@@ -25,7 +25,7 @@ function hidePeopleWithoutAll(attr_name, demanded) {
   var demanded = demanded.split(',');
   $('article.person').each(function() {
     var person = $(this);
-    var has = $(this).attr('characteristics-' + attr_name).split(',');
+    var has = $(this).attr('data-' + attr_name).split(',');
     demanded.forEach(function(needed) {
       if (has.indexOf(needed) == -1) {
         person.hide();

@@ -1,5 +1,5 @@
  function clear_checkboxes() {
-   $('input[type="checkbox"][param-key]').attr("checked", false);
+   $('input[type="checkbox"]').attr("checked", false);
  };
 
  function set_checkboxes_to_url_params() {
@@ -7,7 +7,7 @@
    var params = Url.parseQuery();
    for (category in params) {
      params[category].split(',').forEach(function(val){
-       var checkbox = $('input[type="checkbox"][param-key="' + category + '"][name="' + val+ '"]');
+       var checkbox = $('#' + category + '-' + val);
        checkbox.prop('checked', true);
      });
    };
@@ -15,12 +15,12 @@
 
  function set_url_params_to_checkboxes() {
    var params = {};
-   $('input[type="checkbox"][param-key]').each(function(el){
-      params[$(this).attr('param-key')] = [];
+   $('input[type="checkbox"]').each(function(el){
+      params[$(this).attr('name')] = [];
    });
-   $('input[type="checkbox"][param-key]').each(function(el){
+   $('input[type="checkbox"]').each(function(el){
      if ($(this).prop("checked")) {
-       params[$(this).attr('param-key')].push($(this).attr('name'));
+       params[$(this).attr('name')].push($(this).attr('data-slug'));
      };
    });
    Object.keys(params).forEach(function (k){
