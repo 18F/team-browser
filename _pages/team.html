@@ -15,12 +15,14 @@ layout: team
             {% for location in locations %}
             <div class="field field-checkbox">
               <label>
-                <input type="checkbox" name="{{ location.code }}">
-                <span class="label-text">
-                  {{ location.label }}
-                  <span class="count">{{ location.team.size }}</span>
-                </span>
-              </input>
+                <input type="checkbox" name="{{ location.code }}"
+                     onclick="checkbox_clicked()"
+                     param-key="locations">
+                  <a href="{{ site.baseurl }}/locations/#{{ location.code }}" class="label-text">
+                    <span class="label-text">{{ location.label }}</span>
+                    <span class="count">({{ location.team.size }})</span>
+                  </a>
+                </input>
               </label>
             </div>
             {% endfor %}
@@ -33,12 +35,14 @@ layout: team
             {% for skill in skills %}
             <div class="field field-checkbox">
               <label>
-                <input type="checkbox" name="{{ skill.slug }}">
-                <span class="label-text">
-                  {{ skill.name }}
-                  <span class="count">{{ skill.members.size }}</span>
-                </span>
-              </input>
+                <input type="checkbox" name="{{ skill.slug }}"
+                     onclick="checkbox_clicked()"
+                     param-key="skills">
+                  <a href="{{ site.baseurl }}/skills/#{{ skill.slug }}" class="label-text">
+                    <span class="label-text">{{ skill.name }}</span>
+                    <span class="count">({{ skill.members.size }})</span>
+                  </a>
+                </input>
               </label>
             </div>
             {% endfor %}
@@ -51,12 +55,14 @@ layout: team
             {% for interest in interests %}
             <div class="field field-checkbox">
               <label>
-                <input type="checkbox" name="{{ interest.slug }}">
-                <span class="label-text">
-                  {{ interest.name }}
-                  <span class="count">{{ interest.members.size }}</span>
-                </span>
-              </input>
+                <input type="checkbox" name="{{ interest.slug }}"
+                     onclick="checkbox_clicked()"
+                     param-key="interests">
+                  <a href="{{ site.baseurl }}/interests/#{{ interest.slug }}" class="label-text">
+                    <span class="label-text">{{ interest.name }}</span>
+                    <span class="count">({{ interest.members.size }})</span>
+                  </a>
+                </input>
               </label>
             </div>
             {% endfor %}
