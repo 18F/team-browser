@@ -16,13 +16,9 @@ layout: team
             <div class="field field-checkbox">
               <label>
                 <input type="checkbox" name="locations" id="locations-{{ location.code }}"
-                 data-slug="{{ location.code }}">
-                <a href="{{ site.baseurl }}/locations/#{{ location.code | cgi_escape }}" class="label-text">
-                  <span>
-                    <span class="label-text">{{ location.label }}</span>
-                    <span class="count">({{ location.team.size }})</span>
-                  </span>
-                </a>
+                 value="{{ location.code }}">
+                <span class="label-text">{{ location.label }}</span>
+                <span class="count">{{ location.team.size }}</span>
               </label>
             </div>
             {% endfor %}
@@ -36,13 +32,9 @@ layout: team
             <div class="field field-checkbox">
               <label>
                 <input type="checkbox" name="skills" id="skills-{{ skill.slug }}"
-                 data-slug="{{ skill.slug }}" >
-                <a href="{{ site.baseurl }}/skills/{{ skill.slug | cgi_escape }}" class="label-text">
-                  <span>
-                    <span class="label-text">{{ skill.name }}</span>
-                    <span class="count">({{ skill.members.size }})</span>
-                  </span>
-                </a>
+                 value="{{ skill.slug }}" >
+                <span class="label-text">{{ skill.name }}</span>
+                <span class="count">{{ skill.members.size }}</span>
               </label>
             </div>
             {% endfor %}
@@ -56,13 +48,9 @@ layout: team
             <div class="field field-checkbox">
               <label>
                 <input type="checkbox" name="interests" id="interests-{{ interest.slug }}"
-                 data-slug="{{ interest.slug }}" >
-                <a href="{{ site.baseurl }}/interests/{{ interest.slug | cgi_escape }}" class="label-text">
-                  <span>
-                    <span class="label-text">{{ interest.name }}</span>
-                    <span class="count">({{ interest.members.size }})</span>
-                  </span>
-                </a>
+                 value="{{ interest.slug }}" >
+                <span class="label-text">{{ interest.name }}</span>
+                <span class="count">{{ interest.members.size }}</span>
               </label>
             </div>
             {% endfor %}
@@ -103,7 +91,6 @@ layout: team
    };
    $(document).ready(function(){
      $("input[type='checkbox']").click(checkbox_clicked);
-     $("label > a > span").unwrap();  // no direct links needed when JS working
      set_checkboxes_to_url_params();
      filter_members();
    });

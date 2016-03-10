@@ -20,7 +20,7 @@
    });
    $('input[type="checkbox"]').each(function(el){
      if ($(this).prop("checked")) {
-       params[$(this).attr('name')].push($(this).attr('data-slug'));
+       params[$(this).attr('name')].push($(this).attr('value'));
      };
    });
    Object.keys(params).forEach(function (k){
