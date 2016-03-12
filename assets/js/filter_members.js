@@ -10,6 +10,9 @@ function filter_members() {
    if (params.hasOwnProperty('interests')) {
      hidePeopleWithoutAll('interests', params['interests']);
    };
+   if (params.hasOwnProperty('projects')) {
+     hidePeopleWithoutAll('projects', params['projects']);
+   };
 };
 
 function hidePeopleNotInOneOf(locations) {

@@ -1,6 +1,6 @@
 ---
 title: Table of Contents
-layout: team
+layout: team-index
 ---
 {% assign members = site.data.team %}
 <div class="filters-results">
@@ -51,6 +51,22 @@ layout: team
                  value="{{ interest.slug }}" >
                 <span class="label-text">{{ interest.name }}</span>
                 <span class="count">{{ interest.members.size }}</span>
+              </label>
+            </div>
+            {% endfor %}
+          </div>
+        </fieldset>
+        <fieldset class="fieldset fieldset-projects">
+          <legend>Projects</legend>
+          <div class="fieldset-wrapper">
+            {% assign projects = site.data.projects | sort:"name" %}
+            {% for project in projects %}
+            <div class="field field-checkbox">
+              <label>
+                <input type="checkbox" name="projects" id="projects-{{ project.name }}"
+                 value="{{ project.name }}" >
+                <span class="label-text">{{ project.name }}</span>
+                <span class="count">{{ project.team.size }}</span>
               </label>
             </div>
             {% endfor %}

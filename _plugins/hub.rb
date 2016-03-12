@@ -46,15 +46,9 @@ module Hub
       site.data['guest_users'] = []
 
       Joiner.join_data(site)
-      Snippets.publish(site)
       # Auth.generate_artifacts(site)
       Team.generate_pages(site)
-      Projects.generate_pages(site)
-      Departments.generate_pages(site)
       WorkingGroups.generate_pages(site)
-      Skills.generate_pages(site)
-      Interests.generate_pages(site)
-      Snippets.generate_pages(site)  # TODO: will need this data, not presently in API
       Stats.assign_stats(site)
     end
   end

@@ -117,6 +117,7 @@ module Hub
         @join_source[c] = JoinerImpl.flatten_index(i) if i.instance_of? Hash
       end
       create_team_by_email_index
+
     end
 
     # Populates details of team members in location data

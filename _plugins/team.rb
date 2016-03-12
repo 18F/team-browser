@@ -22,16 +22,6 @@ module Hub
       ::TeamHub::Page.generate_collection_item_pages(site, 'team',
         'team_member', 'full_name', primary_key: 'name')
       team = site.data['team'] || []
-      team.each {|i| generate_team_member_snippets_page(site, i)}
-    end
-
-    def self.generate_team_member_snippets_page(site, team_member)
-      if team_member.member? 'snippets'
-        page = ::TeamHub::Page.generate(site, File.join('snippets',
-          team_member['name']), 'index.html', 'team_member_snippets.html',
-          "#{team_member['full_name']} - Snippets")
-        page.data['member'] = team_member
-      end
     end
   end
 end

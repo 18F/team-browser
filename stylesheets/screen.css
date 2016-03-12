@@ -114,8 +114,8 @@ textarea{
 }
 
 input[type=radio],
-input[type=checkbox]{ 
-	outline: none; 
+input[type=checkbox]{
+	outline: none;
 	border: none;
 }
 
@@ -132,7 +132,7 @@ button,
 	font: inherit;
 	padding: 10px 12px;
 	margin: 0;
-	line-height: 16px;	
+	line-height: 16px;
 	cursor: pointer;
 	text-decoration: none;
 	border-radius: 3px;
@@ -156,8 +156,8 @@ button:active,
 	box-shadow: inset 0 1px 0 rgba(0,0,0,0.1);
 }
 
-.field.field-radio{ 
-	display: inline-block; 
+.field.field-radio{
+	display: inline-block;
 	vertical-align: middle;
 	margin-bottom: 6px;
 }
@@ -200,7 +200,7 @@ div.field.field-checkbox label{
 }
 
 div.field.field-checkbox span.label-text,
-div.field.field-radio span.label-text{ 
+div.field.field-radio span.label-text{
 	display: block;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -211,6 +211,7 @@ div.field.field-radio span.label-text{
 div.field.field-checkbox label span.count{
 	position: absolute;
 	right: 6px;
+  top: 6px;
 	background: #eee;
 	min-width: 2em;
 	text-align: center;
@@ -223,8 +224,8 @@ div.field.field-checkbox label span.count{
 	color: #555;
 }
 
-div.field.field-checkbox input{ 
-	font-size: 1em;	
+div.field.field-checkbox input{
+	font-size: 1em;
 	line-height: 1;
 	position: absolute;
 	left: 4px;
@@ -252,6 +253,7 @@ fieldset {
 
 fieldset.fieldset-locations,
 fieldset.fieldset-skills,
+fieldset.fieldset-projects,
 fieldset.fieldset-interests{
 	padding: 0;
 	border-radius: 3px;
@@ -259,6 +261,7 @@ fieldset.fieldset-interests{
 
 fieldset.fieldset-locations .field-checkbox:first-of-type,
 fieldset.fieldset-skills .field-checkbox:first-of-type,
+fieldset.fieldset-projects .field-checkbox:first-of-type,
 fieldset.fieldset-interests .field-checkbox:first-of-type{
 	margin-top: 6px;
 }
@@ -266,8 +269,10 @@ fieldset.fieldset-interests .field-checkbox:first-of-type{
 fieldset.fieldset-locations label,
 fieldset.fieldset-skills label,
 fieldset.fieldset-interests label,
+fieldset.fieldset-projects label,
 fieldset.fieldset-locations label span.label-text,
 fieldset.fieldset-skills label span.label-text,
+fieldset.fieldset-projects label span.label-text,
 fieldset.fieldset-interests label  span.label-text{ display: block; }
 
 fieldset .fieldset-wrapper{
@@ -278,7 +283,7 @@ fieldset .fieldset-wrapper{
 
 fieldset > legend,
 .field span.label-text{
-	display: block;	
+	display: block;
 	max-width: 40em;
 	margin: 0 0 8px;
 	padding: 0;
@@ -323,8 +328,8 @@ body{
 
 a{  color: #333; text-decoration: none;}
 
-a:hover{ 
-	color: #00aedf; 
+a:hover{
+	color: #00aedf;
 	text-decoration: underline;
 }
 
@@ -597,13 +602,13 @@ input[type="search"]:focus::-webkit-search-cancel-button::after{
 }
 
 @media screen and (min-width: 568.88px){
-	.site-header .logo{ 
+	.site-header .logo{
 		float: left;
 		margin-bottom: 0;
-		white-space: nowrap; 
+		white-space: nowrap;
 		overflow: hidden;
 	}
-	
+
 	.site-header .search-interface,
 	.banner form{
 		position: absolute;
@@ -611,7 +616,7 @@ input[type="search"]:focus::-webkit-search-cancel-button::after{
 		left: auto;
 		top: 0;
 	}
-	
+
 	.banner form input{
 		margin-bottom: 0;
 	}
@@ -709,7 +714,7 @@ input[type="search"]:focus::-webkit-search-cancel-button::after{
 	background: #ddd;
 	width: 1px;
 	-webkit-box-shadow: 1px 0 0 rgba(255,255,255,0.7);
-	
+
 }
 
 .site-footer .button.button-issue{
@@ -738,7 +743,7 @@ input[type="search"]:focus::-webkit-search-cancel-button::after{
 	  -khtml-user-select: none;    /* Konqueror */
 	  -moz-user-select: none;      /* Firefox */
 	  -ms-user-select: none;       /* IE/Edge */
-	  user-select: none;           
+	  user-select: none;
 }
 
 
@@ -746,8 +751,8 @@ input[type="search"]:focus::-webkit-search-cancel-button::after{
 @media screen and (min-width: 486.66px){
 
 	.site-footer .button{ float: left; }
-	.site-footer .button.button-edit{ 
-		margin-right: -0.4em; 
+	.site-footer .button.button-edit{
+		margin-right: -0.4em;
 		clear: none;
 	}
 
@@ -791,7 +796,7 @@ main header dl dt{
 
 
 main header .h-card .p-name{
-	font: inherit;	
+	font: inherit;
 	font-weight: 300;
 }
 
@@ -800,14 +805,14 @@ main header .h-card .p-name{
 	main header dl{
 		padding-left: 196px;
 	}
-	
+
 	.page dl::after,
 	main header dl::after{
 		content: "";
 		display: table;
 		clear: both;
 	}
-	
+
 	.page dl dt,
 	.page dl dd,
 	main header dl dt,
@@ -820,13 +825,13 @@ main header .h-card .p-name{
 		line-height: 1.33em;
 		border-top: 1px solid #eee;
 	}
-	
+
 	main header dl dt,
 	main header dl dd{
 	border: none;
 	padding-top: 0;
 	}
-	
+
 	.page dl dt,
 	main header dl dt{
 		width: 196px;
@@ -834,7 +839,7 @@ main header .h-card .p-name{
 		margin-left: -196px;
 		clear: left;
 		font-weight: 300;
-	}		
+	}
 }
 
 main dd.points-of-contact div.h-card{ margin-bottom: 0; }
@@ -843,9 +848,9 @@ main dd.points-of-contact a.p-tel{ color: #555; text-decoration: none;}
 main dd.points-of-contact a.p-tel:hover{ text-decoration: underline; }
 
 main dd.points-of-contact a.p-tel::before,
-main dd.points-of-contact a.p-tel::after{ 
+main dd.points-of-contact a.p-tel::after{
 	color: #333;
-	content: "("; 
+	content: "(";
 }
 
 main dd.points-of-contact a.p-tel::after{ content: ")"; }
@@ -882,7 +887,7 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 
 .layout-team-api .filters-results .filters h1,
 .layout-team-api .filters-results .results form{
-	display: none;	
+	display: none;
 }
 
 .layout-team-api .filters-results .filters{
@@ -929,66 +934,33 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	border-radius: 100%
 }
 
-@media screen and (min-height: 640px) and (min-width: 808.4211px){ 
-	.layout-team-api{
-		overflow: hidden;
-	}
-	
-	.layout-team-api .site-header{
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-	}
-
-	.layout-team-api .filters-results .filters{
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 56px;
-		height: 16em;	
-	}
-	
-	.layout-team-api .filters-results .results{
-		position: absolute;
-		top: 17.33em;
-		bottom: 0;
-		overflow: auto;
-		background: white;
-	}
-	.layout-team-api .site-footer{
-		display: none;
-	}
-}
-
-
-@media screen and (min-width: 538.9474px){ 
+@media screen and (min-width: 538.9474px){
 
 	.layout-team-api .filters form::after{
 		content: "";
 		display: table;
-		clear: both;	
+		clear: both;
 	}
 
-	.layout-team-api .person{	
+	.layout-team-api .person{
 		float: left;
 		width: 48%;
 		margin-right: 4%;
 	}
-	
+
 	.layout-team-api .person:nth-child(2n+2){
 		margin-right: 0;
 	}
 }
 
 
-@media screen and (min-width: 808.4211px){ 
+@media screen and (min-width: 808.4211px){
 
 	.layout-team-api .filters fieldset.fieldset-locations,
 	.layout-team-api .filters fieldset.fieldset-skills,
 	.layout-team-api .filters fieldset.fieldset-interests,
 	.layout-team-api .person,
-	.layout-team-api .person:nth-child(2n+2){	
+	.layout-team-api .person:nth-child(2n+2){
 		float: left;
 		width: 31.33%;
 		margin-right: 3%;
@@ -998,7 +970,7 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	.layout-team-api .person:nth-child(3n+3){
 		margin-right: 0;
 	}
-	
+
 	.layout-team-api .filters::after{
 		content: "";
 		clear: both;
@@ -1006,10 +978,14 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	}
 }
 
-@media screen and (min-width: 1077.8947px){ 
+@media screen and (min-width: 1077.8947px){
+	.layout-team-api .filters fieldset.fieldset-locations,
+	.layout-team-api .filters fieldset.fieldset-skills,
+	.layout-team-api .filters fieldset.fieldset-interests,
+	.layout-team-api .filters fieldset.fieldset-projects,
 	.layout-team-api .person,
 	.layout-team-api .person:nth-child(2n+2),
-	.layout-team-api .person:nth-child(3n+3){	
+	.layout-team-api .person:nth-child(3n+3){
 		float: left;
 		width: 22%;
 		margin-right: 2.5%;
@@ -1019,11 +995,11 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	}
 }
 
-@media screen and (min-width: 1347.3684px){ 
+@media screen and (min-width: 1347.3684px){
 	.layout-team-api .person,
 	.layout-team-api .person:nth-child(2n+2),
 	.layout-team-api .person:nth-child(3n+3),
-	.layout-team-api .person:nth-child(4n+4){	
+	.layout-team-api .person:nth-child(4n+4){
 		float: left;
 		width: 18%;
 		margin-right: 2%;
@@ -1033,12 +1009,12 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	}
 }
 
-@media screen and (min-width: 1459.2px){ 
+@media screen and (min-width: 1459.2px){
 	.layout-team-api .person,
 	.layout-team-api .person:nth-child(2n+2),
 	.layout-team-api .person:nth-child(3n+3),
 	.layout-team-api .person:nth-child(4n+4),
-	.layout-team-api .person:nth-child(5n+5){	
+	.layout-team-api .person:nth-child(5n+5){
 		float: left;
 		width: 15%;
 		margin-right: 1.5%;
@@ -1048,6 +1024,88 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	}
 }
 
+
+/* @group .layout-team-show */
+
+.layout-team-show .h-card {
+  padding-top: 1px;
+}
+
+.layout-team-show .h-card header {
+  margin-top: 1em;
+}
+
+.layout-team-show .h-card h1{
+        font-size: 36px;
+        line-height: 1.125em;
+        font-family: source sans pro, arial, sans;
+        font-weight: 600;
+        padding-bottom: 0.33em;
+        display: block;
+        letter-spacing: -0.03em;
+}
+
+.layout-team-show .h-card dl{ margin-top: 1em; }
+
+
+.layout-team-show .h-card .projects ol,
+.layout-team-show .h-card .skills ol,
+.layout-team-show .h-card .interests ol{ margin: 0; }
+
+.layout-team-show .h-card .projects ol li,
+.layout-team-show .h-card .skills ol li,
+.layout-team-show .h-card .interests ol li{
+    display: inline;
+    list-style-type: none;
+}
+
+.layout-team-show .h-card .projects li::after,
+.layout-team-show .h-card .skills li::after,
+.layout-team-show .h-card .interests li::after{ content: ","; }
+
+.layout-team-show .h-card .projects li:last-child::after,
+.layout-team-show .h-card .skills li:last-child::after,
+.layout-team-show .h-card .interests li:last-child::after{content: ""; }
+
+.layout-team-show .h-card img{ border-radius: 100% }
+
+
+@media screen and (min-width: 512px){
+
+    .layout-team-show .h-card header{
+        padding: 0;
+        margin: 0;
+        padding-left: 128px;
+        height: 72px;
+        border: none;
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .layout-team-show .h-card header h1{ margin: 0; }
+
+    .layout-team-show .h-card header::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .layout-team-show .h-card header img{
+        width: 72px;
+        position: absolute;
+        left: 0;
+        top: -4px;
+    }
+
+    .layout-team-show .page dl{ padding-left: 128px; }
+    .layout-team-show .page dt{ width: 128px; margin-left: -128px; }
+
+
+}
+
+
+/* @end */
 
 /* @end */
 
