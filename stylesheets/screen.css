@@ -1,3 +1,5 @@
+/* @override http://localhost:4000/stylesheets/screen.css */
+
 /* @override http://127.0.0.1:4000/stylesheets/screen.css */
 
 /* @override http://127.0.0.1:4000/stylesheets/screen.css */
@@ -228,8 +230,10 @@ div.field.field-checkbox input{
 	font-size: 1em;
 	line-height: 1;
 	position: absolute;
-	left: 4px;
-	top: 5px;
+	left: 6px;
+	top: 50%;
+	margin: 0;
+	margin-top: -0.5em;
 }
 
 
@@ -276,9 +280,8 @@ fieldset.fieldset-projects label span.label-text,
 fieldset.fieldset-interests label  span.label-text{ display: block; }
 
 fieldset .fieldset-wrapper{
-	max-height: 12em;
+	max-height: 10em;
 	overflow: auto;
-	margin-right: 1px;
 }
 
 fieldset > legend,
@@ -775,30 +778,9 @@ main{
 	background: white;
 	padding-bottom: 2em;
 }
+
 /* @group main header */
 
-main header{
-	border-bottom: 2px dotted #fbeabb;
-	padding-bottom: 2em;
-	margin-bottom: 2em;
-}
-
-main header dl{ max-width: none; }
-
-.page dl dt,
-main header dl dt{
-	color: #887958;
-	margin-bottom: 12px;
-	margin-top: 24px;
-	margin-bottom: 0.2em;
-	clear: both;
-}
-
-
-main header .h-card .p-name{
-	font: inherit;
-	font-weight: 300;
-}
 
 @media screen and (min-width: 512px){
 	.page dl,
@@ -838,7 +820,7 @@ main header .h-card .p-name{
 		padding-right: 16px;
 		margin-left: -196px;
 		clear: left;
-		font-weight: 300;
+		color: #777;
 	}
 }
 
@@ -902,6 +884,7 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	position: relative;
 	vertical-align: middle;
 	margin-bottom: 12px;
+	font-size: 16px;
 }
 
 .layout-team-api .person a{
@@ -945,29 +928,25 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	.layout-team-api .person{
 		float: left;
 		width: 48%;
-		margin-right: 4%;
+		margin-right: 2%;
+	}
+	
+	.layout-team-api .results{
+		overflow-x: hidden;
 	}
 
-	.layout-team-api .person:nth-child(2n+2){
-		margin-right: 0;
-	}
 }
 
 
 @media screen and (min-width: 808.4211px){
 
-	.layout-team-api .filters fieldset.fieldset-locations,
-	.layout-team-api .filters fieldset.fieldset-skills,
-	.layout-team-api .filters fieldset.fieldset-interests,
-	.layout-team-api .person,
-	.layout-team-api .person:nth-child(2n+2){
+	.layout-team-api .person{
 		float: left;
-		width: 31.33%;
+		width: 30%;
 		margin-right: 3%;
 	}
 
-	.layout-team-api .filters fieldset.fieldset-interests,
-	.layout-team-api .person:nth-child(3n+3){
+	.layout-team-api .filters fieldset.fieldset-interests{
 		margin-right: 0;
 	}
 
@@ -983,56 +962,48 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	.layout-team-api .filters fieldset.fieldset-skills,
 	.layout-team-api .filters fieldset.fieldset-interests,
 	.layout-team-api .filters fieldset.fieldset-projects,
-	.layout-team-api .person,
-	.layout-team-api .person:nth-child(2n+2),
-	.layout-team-api .person:nth-child(3n+3){
+	.layout-team-api .person{
 		float: left;
-		width: 22%;
-		margin-right: 2.5%;
+		width: 23.875%;
+		margin-right: 1.5%;
 	}
-	.layout-team-api .person:nth-child(4n+4){
-		margin-right: 0;
+	
+	.layout-team-api .person{
+		width: 23.5%;
+	}
+
+	.layout-team-api .filters fieldset.fieldset-projects{
+		margin-right: -1.5%;
 	}
 }
 
 @media screen and (min-width: 1347.3684px){
-	.layout-team-api .person,
-	.layout-team-api .person:nth-child(2n+2),
-	.layout-team-api .person:nth-child(3n+3),
-	.layout-team-api .person:nth-child(4n+4){
+	.layout-team-api .person{
 		float: left;
-		width: 18%;
-		margin-right: 2%;
+		width: 19%;
+		margin-right: 1%;
 	}
-	.layout-team-api .person:nth-child(5n+5){
-		margin-right: 0;
-	}
+
 }
 
 @media screen and (min-width: 1459.2px){
-	.layout-team-api .person,
-	.layout-team-api .person:nth-child(2n+2),
-	.layout-team-api .person:nth-child(3n+3),
-	.layout-team-api .person:nth-child(4n+4),
-	.layout-team-api .person:nth-child(5n+5){
+	.layout-team-api .person{
 		float: left;
-		width: 15%;
-		margin-right: 1.5%;
-	}
-	.layout-team-api .person:nth-child(6n+6){
-		margin-right: 0;
+		width: 16%;
+		margin-right: 0.5%;
 	}
 }
 
+/* @end */
 
 /* @group .layout-team-show */
 
-.layout-team-show .h-card {
-  padding-top: 1px;
+.layout-team-show .site-header form{
+	display: none;
+	
 }
-
-.layout-team-show .h-card header {
-  margin-top: 1em;
+.layout-team-show .h-card {
+  padding-top: 2em;
 }
 
 .layout-team-show .h-card h1{
@@ -1098,14 +1069,12 @@ header dl dd ul li:last-of-type::after{ content: ""; }
         top: -4px;
     }
 
-    .layout-team-show .page dl{ padding-left: 128px; }
-    .layout-team-show .page dt{ width: 128px; margin-left: -128px; }
+    .layout-team-show .page dl{ padding-left: 144px; }
+    .layout-team-show .page dt{ width: 144px; margin-left: -144px; }
 
 
 }
 
-
-/* @end */
 
 /* @end */
 
