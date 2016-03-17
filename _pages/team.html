@@ -1,6 +1,6 @@
 ---
 title: Table of Contents
-layout: team
+layout: team-index
 ---
 {% assign members = site.data.team %}
 <div class="filters-results">
@@ -15,12 +15,10 @@ layout: team
             {% for location in locations %}
             <div class="field field-checkbox">
               <label>
-                <input type="checkbox" name="{{ location.code }}">
-                <span class="label-text">
-                  {{ location.label }}
-                  <span class="count">{{ location.team.size }}</span>
-                </span>
-              </input>
+                <input type="checkbox" name="locations" id="locations-{{ location.code }}"
+                 value="{{ location.code }}">
+                <span class="label-text">{{ location.label }}</span>
+                <span class="count">{{ location.team.size }}</span>
               </label>
             </div>
             {% endfor %}
@@ -33,12 +31,10 @@ layout: team
             {% for skill in skills %}
             <div class="field field-checkbox">
               <label>
-                <input type="checkbox" name="{{ skill.slug }}">
-                <span class="label-text">
-                  {{ skill.name }}
-                  <span class="count">{{ skill.members.size }}</span>
-                </span>
-              </input>
+                <input type="checkbox" name="skills" id="skills-{{ skill.slug }}"
+                 value="{{ skill.slug }}" >
+                <span class="label-text">{{ skill.name }}</span>
+                <span class="count">{{ skill.members.size }}</span>
               </label>
             </div>
             {% endfor %}
@@ -51,12 +47,26 @@ layout: team
             {% for interest in interests %}
             <div class="field field-checkbox">
               <label>
-                <input type="checkbox" name="{{ interest.slug }}">
-                <span class="label-text">
-                  {{ interest.name }}
-                  <span class="count">{{ interest.members.size }}</span>
-                </span>
-              </input>
+                <input type="checkbox" name="interests" id="interests-{{ interest.slug }}"
+                 value="{{ interest.slug }}" >
+                <span class="label-text">{{ interest.name }}</span>
+                <span class="count">{{ interest.members.size }}</span>
+              </label>
+            </div>
+            {% endfor %}
+          </div>
+        </fieldset>
+        <fieldset class="fieldset fieldset-projects">
+          <legend>Projects</legend>
+          <div class="fieldset-wrapper">
+            {% assign projects = site.data.projects | sort:"name" %}
+            {% for project in projects %}
+            <div class="field field-checkbox">
+              <label>
+                <input type="checkbox" name="projects" id="projects-{{ project.name }}"
+                 value="{{ project.name }}" >
+                <span class="label-text">{{ project.name }}</span>
+                <span class="count">{{ project.team.size }}</span>
               </label>
             </div>
             {% endfor %}
@@ -87,3 +97,17 @@ layout: team
     </div>
   </section>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/urljs/1.2.0/url.min.js"></script>
+<script type = "text/javascript" src="{{ site.baseurl }}/assets/js/synch_url_params_to_checkboxes.js"></script>
+<script type = "text/javascript" src="{{ site.baseurl }}/assets/js/filter_members.js"></script>
+<script type = "text/javascript">
+   function checkbox_clicked() {
+     set_url_params_to_checkboxes();
+     filter_members();
+   };
+   $(document).ready(function(){
+     $("input[type='checkbox']").click(checkbox_clicked);
+     set_checkboxes_to_url_params();
+     filter_members();
+   });
+</script>

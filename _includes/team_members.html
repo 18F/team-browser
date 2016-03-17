@@ -1,15 +1,19 @@
 {% for member in members %}
-  <article class="person">
-    {% assign photo_exists = member.name | photo_exists_in:site %}
-    <a href="{{ site.baseurl }}/team/{{ member.name | canonicalize }}">
-    {{ member.full_name }}
-    <img class="team-member-thumb"
-     src="{{ member.name | photo_or_placeholder:site }}"
-      alt="{% if photo_exists %}
-             member.name
-           {% else %}
+  <article class="person"
+   data-location="{{ member.location }}"
+   data-skills="{{ member.skills | map: 'slug' | join: ',' }}"
+   data-interests="{{ member.interests | map: 'slug' | join: ',' }}"
+   data-projects="{{ member.projects | map: 'name' | join: ',' }}" 
+   >
+   {% assign photo_exists = member.name | photo_exists_in:site %}
+      <a href="{{ site.baseurl }}/team/{{ member.name | canonicalize }}">
+      {{ member.full_name }}
+      <img class="team-member-thumb"
+       src="{{ member.name | photo_or_placeholder:site }}"
+        alt="{% if photo_exists %}member.name
+             {% else %}
              18F logo ({{ member.full_name }} photo missing)
            {% endif %}">
-    </a>
+     </a>
   </article>
 {% endfor %}

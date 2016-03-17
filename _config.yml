@@ -76,7 +76,7 @@ private_data_path: _data/private
 
 # team member images
 team_img_dir: assets/images/team
-missing_team_member_img: logo-18f.jpg
+missing_team_member_img: avatar_blank.png
 guest_user_img: logo-18f.jpg
 
 # Editable link idea from:
