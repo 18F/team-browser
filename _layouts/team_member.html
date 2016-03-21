@@ -27,7 +27,7 @@ category: profile
       {% endif %}
       {% if member.location %}
       <dt class="office">Office</dt>
-      <dd class="office"><a class="u-office" href="{{ site.baseurl }}/team/?location={{ member.location }}">{{ member.location }}</a></dd>
+      <dd class="office"><a class="u-office" href="{{ site.baseurl }}/?location={{ member.location }}">{{ member.location }}</a></dd>
       {% endif %}
 
       {% if member.resume %}
@@ -46,7 +46,7 @@ category: profile
         <ol>
           {% for proj in member.projects | sort:"name" %}
           <li>
-            <a href="{{ site.baseurl }}/team/?projects={{ proj.name | canonicalize }}/">{{ proj.full_name }}</a>
+            <a href="{{ site.baseurl }}/?projects={{ proj.name | canonicalize }}">{{ proj.full_name }}</a>
           </li>
           {% endfor %}
         </ol>
@@ -58,7 +58,7 @@ category: profile
       <dd class="skills">
         <ol>
           {% for skill in member.skills %}
-          <li><a href="{{ site.baseurl}}/team?skills={{ skill.slug | cgi_escape }}/">{{ skill.name }}/</a></li>
+          <li><a href="{{ site.baseurl}}/?skills={{ skill.slug | cgi_escape }}">{{ skill.name }}</a></li>
           {% endfor %}
         </ol>
       </dd>
@@ -70,7 +70,7 @@ category: profile
         <ol>
           {% for interest in member.interests %}
           <li>
-            <a href="{{ site.baseurl }}/team/?interests={{ interest.slug | cgi_escape }}">{{ interest.name }}/</a>
+            <a href="{{ site.baseurl }}/?interests={{ interest.slug | cgi_escape }}">{{ interest.name }}</a>
           </li>
           {% endfor %}
         </ol>
