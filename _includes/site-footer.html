@@ -10,8 +10,8 @@
         </a>
       {% endif %}
       {% unless page.hide_edit_link %}
-      <a class="button button-edit" href="https://github.com/{{ site.github.organization }}/{{ site.github.repository }}/edit/{{ site.github.default_branch }}/{{ page.path }}">Edit this page</a>{% endunless %}
-      <a class="button button-issue" href="https://github.com/{{ site.github.organization }}/{{ site.github.repository }}/issues/">File an issue</a>
+      <a class="button button-edit" href="https://github.com/{{ site.github.organization }}/{{ site.github.repository }}/edit/{{ site.github.default_branch }}/{{ page.path }}" target="_blank">Edit this page</a>{% endunless %}
+      <a class="button button-issue" href="https://github.com/{{ site.github.organization }}/{{ site.github.repository }}/issues/" target="_blank">File an issue</a>
     </nav>          
   </div>
 </footer>
