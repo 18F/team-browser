@@ -116,6 +116,12 @@ prose:
 # For Google Analytics
 google_analytics_ua: UA-48605964-24
 
+#Github Info
+github:
+  repository: "team-browser"
+  organization: "18F"
+  default_branch: "18f-pages"
+
 jekyll_get:
   - data: team_raw
     json: 'https://team-api.18f.gov/public/api/team/'
