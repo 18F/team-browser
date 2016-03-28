@@ -65,7 +65,13 @@ layout: team-index
               <label>
                 <input type="checkbox" name="projects" id="projects-{{ project.name }}"
                  value="{{ project.name }}" >
-                <span class="label-text">{{ project.name }}</span>
+                <span class="label-text">
+                  {% if project.full_name %}
+                    {{ project.full_name }}
+                  {% else %}
+                    {{ project.name }}
+                  {% endif %}
+                  </span>
                 <span class="count">{{ project.team.size }}</span>
               </label>
             </div>
