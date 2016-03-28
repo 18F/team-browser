@@ -999,7 +999,7 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 /* @group .layout-team-show */
 
 .layout-team-show .site-header form{
-	display: none;
+	display: block;
 	
 }
 .layout-team-show .h-card {
