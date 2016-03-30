@@ -25,6 +25,20 @@ module Hub
       File.join(site['team_img_dir'], "#{name}.jpg")
     end
 
+    def photo_exists(name, site, alt)
+      if alt
+        names = [name, alt]
+      else
+        names = [name]
+      end
+      names.each do |name|
+        if photo_exists_in(name, site) || photo_exists_at(name, site)
+          return true
+        end
+      end
+      return false
+    end
+
     def photo_exists_in(name, site)
       File.exists? img_file_path(name, site)
     end
