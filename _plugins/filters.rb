@@ -29,12 +29,29 @@ module Hub
       File.exists? img_file_path(name, site)
     end
 
+    def photo_exists_at(name,site)
+      uri = URI("#{site['photo_repository_url']}#{name}.jpg")
+      res = Net::HTTP.get_response(uri)
+      res.code == "200"
+    end
+
     # URL of team member's photo, or to the substitute image
     # when their photo is missing
-    def photo_or_placeholder(name, site)
+    def photo_or_placeholder(name, site, alt_name)
+      if alt_name
+        names = [name,alt_name]
+      else
+        names = [name]
+      end
+
       base = site['baseurl'] || ''
-      if photo_exists_in(name, site)
-        return File.join(base, img_file_path(name, site))
+      names.each do |name, index|
+        if photo_exists_in(name, site)
+          return File.join(base, img_file_path(name, site))
+        end
+        if photo_exists_at(name, site)
+          return "#{site['photo_repository_url']}#{name}.jpg"
+        end
       end
       File.join(base, site['team_img_dir'], site['missing_team_member_img'])
     end
