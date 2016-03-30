@@ -25,13 +25,9 @@ module Hub
       File.join(site['team_img_dir'], "#{name}.jpg")
     end
 
-    def photo_exists(name, site, alt)
-      if alt
-        names = [name, alt]
-      else
-        names = [name]
-      end
-      names.each do |name|
+    def photo_exists(member, site)
+      site['img_name_keys'].each do |key|
+        name = member[key]
         if photo_exists_in(name, site) || photo_exists_at(name, site)
           return true
         end
@@ -51,15 +47,10 @@ module Hub
 
     # URL of team member's photo, or to the substitute image
     # when their photo is missing
-    def photo_or_placeholder(name, site, alt_name)
-      if alt_name
-        names = [name,alt_name]
-      else
-        names = [name]
-      end
-
+    def photo_or_placeholder(member, site)
       base = site['baseurl'] || ''
-      names.each do |name, index|
+      site['img_name_keys'].each do |key|
+        name = member[key]
         if photo_exists_in(name, site)
           return File.join(base, img_file_path(name, site))
         end

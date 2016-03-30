@@ -6,11 +6,11 @@
    data-projects="{{ member.projects | map: 'name' | join: ',' }}" 
    >
 
-   {% assign photo_exists = member.name | photo_exists:site alt_name: member.deprecated_name %}
+   {% assign photo_exists = member | photo_exists:site %}
       <a href="{{ site.baseurl }}/team/{{ member.name | canonicalize }}">
       {{ member.full_name }}
       <img class="team-member-thumb"
-       src="{{ member.name | photo_or_placeholder:site alt_name: member.deprecated_name }}"
+       src="{{ member | photo_or_placeholder:site }}"
         alt="{% if photo_exists %}{{member.full_name}}
              {% else %}
              18F logo ({{ member.full_name }} photo missing)

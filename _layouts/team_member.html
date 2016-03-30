@@ -8,7 +8,7 @@ category: profile
   <div class="wrapper">
     <header>
       <h1 class="p-name">{{ member.full_name }}</h1>
-      <img class="u-photo" src="{{ member.name | photo_or_placeholder:site alt_name: member.deprecated_name}}"
+      <img class="u-photo" src="{{ member | photo_or_placeholder:site}}"
        alt="Photo of {{ member.full_name }}" />
     </header>
     <dl>

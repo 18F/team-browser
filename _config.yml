@@ -78,8 +78,12 @@ private_data_path: _data/private
 team_img_dir: assets/images/team
 missing_team_member_img: avatar_blank.png
 guest_user_img: logo-18f.jpg
+img_name_keys:
+  - "name"
+  - "deprecated_name"
 # Looks at this location for team phot if not found locally 
 photo_repository_url: "https://18f.gsa.gov/assets/images/team/"
+
 
 # Editable link idea from:
 # https://github.com/blacktm/standard-jekyll-template/blob/gh-pages/_config.yml
