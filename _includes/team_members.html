@@ -5,6 +5,7 @@
    data-interests="{{ member.interests | map: 'slug' | join: ',' }}"
    data-projects="{{ member.projects | map: 'name' | join: ',' }}" 
    >
+
    {% assign photo_exists = member.name | photo_exists:site alt_name: member.deprecated_name %}
       <a href="{{ site.baseurl }}/team/{{ member.name | canonicalize }}">
       {{ member.full_name }}
