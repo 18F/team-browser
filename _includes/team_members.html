@@ -10,10 +10,7 @@
       {{ member.full_name }}
       <img class="team-member-thumb"
        src="{{ member.name | photo_or_placeholder:site }}"
-        alt="{% if photo_exists %}member.name
-             {% else %}
-             18F logo ({{ member.full_name }} photo missing)
-           {% endif %}">
+        alt="{% if photo_exists %}{{ member.full_name }}{% else %}photo missing{% endif %}">
      </a>
   </article>
 {% endfor %}
