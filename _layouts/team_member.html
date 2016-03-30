@@ -4,12 +4,11 @@ category: profile
 ---
 
 {% assign member = page.team_member %}
-
 <main role="main" class="h-card page">
   <div class="wrapper">
     <header>
       <h1 class="p-name">{{ member.full_name }}</h1>
-      <img class="u-photo" src="{{ member.name | photo_or_placeholder:site }}"
+      <img class="u-photo" src="{{ member.name | photo_or_placeholder:site alt_name: member.deprecated_name}}"
        alt="Photo of {{ member.full_name }}" />
     </header>
     <dl>
