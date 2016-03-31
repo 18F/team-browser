@@ -81,7 +81,7 @@ guest_user_img: logo-18f.jpg
 img_name_keys:
   - "name"
   - "deprecated_name"
-# Looks at this location for team phot if not found locally 
+# Looks at this location for team photo if not found locally 
 photo_repository_url: "https://18f.gsa.gov/assets/images/team/"
 
 
