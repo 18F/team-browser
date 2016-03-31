@@ -4,35 +4,31 @@ category: profile
 ---
 
 {% assign member = page.team_member %}
-  <main role="main" class="h-card page">
-    <div class="wrapper">
-      <header>
-        <h1 class="p-name">{{ member.full_name }}</h1>
-        <img class="u-photo" src="{{ member.name | photo_or_placeholder:site }}"
-         alt="Photo of {{ member.full_name }}" />
-      </header>
-      <dl>
-        {% if member.email %}
-        <dt class="email">Email</dt>
-        <dd class="email"><a class="u-email" href="mailto:{{ member.email }}">{{ member.email }}</a></dd>
-        {% endif %}
-        {% if member.github %}
-        <dt class="github">GitHub</dt>
-        <dd class="github"><a class="u-github" href="https://github.com/{{ member.github }}">{{ member.github }}</a></dd>
-        {% endif %}
-        {% if member.slack %}
-        <dt class="slack">18F Slack</dt>
-        <dd class="slack"><a class="u-slack" href="https://18f.slack.com/team/{{ member.slack }}">{{ member.slack }}</a></dd>
-        {% endif %}
-        {% if member.location %}
-        <dt class="office">Office</dt>
-        <dd class="office"><a class="u-office" href="{{ site.baseurl }}/?location={{ member.location }}">{{ member.location }}</a></dd>
-        {% endif %}
 
-        {% if member.resume %}
-        <dt class="resume">Resume</dt>
-        <dd class="resume"><a class="u-resume" href="{{ member.resume }}">18F Résumé</a></dd>
-        {% endif %}
+<main role="main" class="h-card page">
+  <div class="wrapper">
+    <header>
+      <h1 class="p-name">{{ member.full_name }}</h1>
+      <img class="u-photo" src="{{ member | photo_or_placeholder:site}}"
+       alt="Photo of {{ member.full_name }}" />
+    </header>
+    <dl>
+      {% if member.email %}
+      <dt class="email">Email</dt>
+      <dd class="email"><a class="u-email" href="mailto:{{ member.email }}">{{ member.email }}</a></dd>
+      {% endif %}
+      {% if member.github %}
+      <dt class="github">GitHub</dt>
+      <dd class="github"><a class="u-github" href="https://github.com/{{ member.github }}">{{ member.github }}</a></dd>
+      {% endif %}
+      {% if member.slack %}
+      <dt class="slack">18F Slack</dt>
+      <dd class="slack"><a class="u-slack" href="https://18f.slack.com/team/{{ member.slack }}">{{ member.slack }}</a></dd>
+      {% endif %}
+      {% if member.location %}
+      <dt class="office">Office</dt>
+      <dd class="office"><a class="u-office" href="{{ site.baseurl }}/?location={{ member.location }}">{{ member.location }}</a></dd>
+      {% endif %}
 
         {% if member.okrs %}
         <dt class="okrs">OKRs</dt>
