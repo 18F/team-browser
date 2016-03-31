@@ -25,16 +25,52 @@ module Hub
       File.join(site['team_img_dir'], "#{name}.jpg")
     end
 
+    def photo_exists(member, site)
+      keys = site['img_name_keys'] || ['name']
+      if member.kind_of?(String)
+        member = {"name"=> member}
+      end
+      keys.each do |key|
+        name = member[key]
+        if photo_exists_in(name, site) || photo_exists_at(name, site)
+          return true
+        end
+      end
+      return false
+    end
+
     def photo_exists_in(name, site)
       File.exists? img_file_path(name, site)
     end
 
+    def photo_exists_at(name,site)
+      if !site['photo_repository_url']
+        return false
+      else
+        uri = URI("#{site['photo_repository_url']}#{name}.jpg")
+        res = Net::HTTP.get_response(uri)
+        return res.code == "200"
+      end
+    end
+
     # URL of team member's photo, or to the substitute image
     # when their photo is missing
-    def photo_or_placeholder(name, site)
+    # member is the team member object
+    # creates an object if just a name string is passed
+    def photo_or_placeholder(member, site)
       base = site['baseurl'] || ''
-      if photo_exists_in(name, site)
-        return File.join(base, img_file_path(name, site))
+      keys = site['img_name_keys'] || ['name']
+      if member.kind_of?(String)
+        member = {"name"=> member}
+      end
+      keys.each do |key|
+        name = member[key]
+        if photo_exists_in(name, site)
+          return File.join(base, img_file_path(name, site))
+        end
+        if photo_exists_at(name, site)
+          return "#{site['photo_repository_url']}#{name}.jpg"
+        end
       end
       File.join(base, site['team_img_dir'], site['missing_team_member_img'])
     end
