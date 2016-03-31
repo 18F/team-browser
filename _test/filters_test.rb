@@ -28,12 +28,18 @@ module Hub
 
     def test_when_photo_present
       result = photo_or_placeholder(@@sample_team_member_name, @@site)
-      assert_equal(result, File.join("", @@imagefile_path))
+      photo_exists = photo_exists(@@sample_team_member_name, @@site)
+      
+      assert_equal(true, photo_exists)
+      assert_equal(File.join("", @@imagefile_path), result)
     end
 
     def test_when_photo_absent
       result = photo_or_placeholder("nonexistent", @@site)
-      assert_equal(result, File.join("", @@image_directory_name, "no_image.jpg"))
+      photo_exists = photo_exists("nonexistent", @@site)
+      
+      assert_equal(false, photo_exists)
+      assert_equal(File.join("", @@image_directory_name, "no_image.jpg"), result)
     end
 
   end
