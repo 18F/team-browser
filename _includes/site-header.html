@@ -4,14 +4,8 @@
       <object type="image/svg+xml" data="/images/svg/users.svg" class="logo" role="img" aria-label="Team Icon">Team Icon</object>
       <a href="{{site.baseurl}}/">Team Browser</a>
     </h1>
-    <form action="search.php">
-      <div class="field field-name">
-        <label>
-          <span class="label-text">Name</span>
-          <input type="search">
-        </label>
-      </div>
-      <button type='submit'>Search</button>
-    </form>
+
+    {% jekyll_pages_api_search_interface %}
+
   </div>
 </header>
