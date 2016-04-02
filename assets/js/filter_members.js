@@ -1,5 +1,6 @@
 function filter_members() {
    $('article.person').show();
+   hidePeopleNotActive();
    var params = Url.parseQuery();
    if (params.hasOwnProperty('locations')) {
      hidePeopleNotInOneOf(params['locations']);
@@ -19,6 +20,18 @@ function hidePeopleNotInOneOf(locations) {
   var locations = locations.split(',');
   $('article.person').each(function() {
     if (locations.indexOf($(this).attr('data-location')) == -1) {
+      $(this).hide();
+    };
+  });
+};
+
+// a temorary function until we get the API to return filtered results
+function hidePeopleNotActive() {
+  var today = Date.now();
+
+  $('article.person').each(function() {
+    if ($(this).attr('data-end-date')) {
+      if ($(this).attr('data-end-date') < today);
       $(this).hide();
     };
   });
