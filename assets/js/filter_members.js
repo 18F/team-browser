@@ -1,6 +1,6 @@
 function filter_members() {
    $('article.person').show();
-   hidePeopleNotActive();
+
    var params = Url.parseQuery();
    if (params.hasOwnProperty('locations')) {
      hidePeopleNotInOneOf(params['locations']);
@@ -28,12 +28,20 @@ function hidePeopleNotInOneOf(locations) {
 // a temorary function until we get the API to return filtered results
 function hidePeopleNotActive() {
   var today = Date.now();
-
+  // because not everyone has a start date or end date specified, the logic is a bit more complex
   $('article.person').each(function() {
     if ($(this).attr('data-end-date')) {
-      if ($(this).attr('data-end-date') < today);
-      $(this).hide();
+      var end_date = new Date($(this).attr('data-end-date'));
+      if (end_date < today) {
+        $(this).remove();
+      };
     };
+    if ($(this).attr('data-start-date')) {
+      var start_date = new Date($(this).attr('data-start-date'));
+      if (start_date >= today) {
+        $(this).remove();
+      }
+    }
   });
 };
 
