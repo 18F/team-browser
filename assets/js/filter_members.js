@@ -1,5 +1,8 @@
 function filter_members() {
    $('article.person').show();
+   // This can be attached to a checkbox in the future, but for now, will filter out all former members and those who have not yet started
+   hidePeopleWhoHaveNotStarted();
+   hidePeopleWhoHaveLeft();
 
    var params = Url.parseQuery();
    if (params.hasOwnProperty('locations')) {
@@ -25,26 +28,6 @@ function hidePeopleNotInOneOf(locations) {
   });
 };
 
-// a temorary function until we get the API to return filtered results
-function hidePeopleNotActive() {
-  var today = Date.now();
-  // because not everyone has a start date or end date specified, the logic is a bit more complex
-  $('article.person').each(function() {
-    if ($(this).attr('data-end-date')) {
-      var end_date = new Date($(this).attr('data-end-date'));
-      if (end_date < today) {
-        $(this).remove();
-      };
-    };
-    if ($(this).attr('data-start-date')) {
-      var start_date = new Date($(this).attr('data-start-date'));
-      if (start_date >= today) {
-        $(this).remove();
-      }
-    }
-  });
-};
-
 function hidePeopleWithoutAll(attr_name, demanded) {
   var demanded = demanded.split(',');
   $('article.person').each(function() {
@@ -56,4 +39,13 @@ function hidePeopleWithoutAll(attr_name, demanded) {
       };
     });
   });
+};
+
+// temporary functions to hide people who are not current employees
+function hidePeopleWhoHaveNotStarted() {
+  $(".has_not_started").remove();
+};
+
+function hidePeopleWhoHaveLeft() {
+  $(".has_left").remove();
 };

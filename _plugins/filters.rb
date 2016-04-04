@@ -76,20 +76,26 @@ module Hub
       File.join(base, site['team_img_dir'], site['missing_team_member_img'])
     end
 
+    # Checks to see whether a given date is prior to today
     def before_today(datestring)
       if (datestring != nil)
         if (DateTime.parse(datestring) < Date.today)
           return true
+        else
+          return false
         end
       else
         return false
       end
     end
 
+    # Checks to see whether a given date is after today
     def after_today(datestring)
       if (datestring != nil)
         if (DateTime.parse(datestring) > Date.today)
           return true
+        else
+          return false
         end
       else
         return false
