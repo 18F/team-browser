@@ -1,5 +1,9 @@
 function filter_members() {
    $('article.person').show();
+   // This can be attached to a checkbox in the future, but for now, will filter out all former members and those who have not yet started
+   hidePeopleWhoHaveNotStarted();
+   hidePeopleWhoHaveLeft();
+
    var params = Url.parseQuery();
    if (params.hasOwnProperty('locations')) {
      hidePeopleNotInOneOf(params['locations']);
@@ -35,4 +39,13 @@ function hidePeopleWithoutAll(attr_name, demanded) {
       };
     });
   });
+};
+
+// temporary functions to hide people who are not current employees
+function hidePeopleWhoHaveNotStarted() {
+  $(".has-not-started").remove();
+};
+
+function hidePeopleWhoHaveLeft() {
+  $(".has-left").remove();
 };

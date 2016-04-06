@@ -2,10 +2,55 @@ require_relative "test_helper"
 require_relative "../_plugins/filters"
 
 require "minitest/autorun"
+require "date"
 
 module Hub
   class TestFilters
     include Filters
+  end
+
+  class DateCompareFilterTest < ::Minitest::Test
+    include Filters
+
+    @@sample_date_before_today = (Date.today - 1).to_s
+    @@sample_date_after_today = (Date.today + 1).to_s
+
+    def test_is_before_today
+      is_before_today = before_today(@@sample_date_before_today)
+
+      assert_equal(true, is_before_today)
+    end
+
+    def test_is_after_today
+      is_after_today = after_today(@@sample_date_after_today)
+
+      assert_equal(true, is_after_today)
+    end
+
+    def test_is_not_after_today
+      is_after_today = after_today(@@sample_date_before_today)
+
+      assert_equal(false, is_after_today)
+    end
+
+    def test_is_not_before_today
+      is_before_today = before_today(@@sample_date_after_today)
+
+      assert_equal(false, is_before_today)
+    end
+
+    def test_is_nil_before
+      is_before_today = before_today(nil)
+
+      assert_equal(false, is_before_today)
+    end
+
+    def test_is_nil_after
+      is_after_today = after_today(nil)
+
+      assert_equal(false, is_after_today)
+    end
+
   end
 
   class PhotoOrPlaceholderFilterTest < ::Minitest::Test
