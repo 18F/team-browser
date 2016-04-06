@@ -1,7 +1,7 @@
 {% for member in members %}
   {% assign has_not_started = member.start_date | after_today %}
   {% assign has_left = member.end_date | before_today %}
-    <article class="person {% if has_not_started %} has_not_started{% elsif has_left %} has_left{% endif %}"
+    <article class="person {% if has_not_started %} has-not-started{% elsif has_left %} has-left{% endif %}"
      data-location="{{ member.location }}"
      data-skills="{{ member.skills | map: 'slug' | join: ',' }}"
      data-interests="{{ member.interests | map: 'slug' | join: ',' }}"

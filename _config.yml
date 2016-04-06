@@ -135,15 +135,11 @@ github:
 
 jekyll_get:
   - data: team_raw
-    json: 'https://team-api.18f.gov/api/team/'
+    json: 'https://team-api.18f.gov/public/api/team/'
     cache: false
-    authentication_scheme: hmac
-    authentication_env_var_name: HMAC_KEY
   - data: locations_raw
-    json: 'https://team-api.18f.gov/api/locations/'
+    json: 'https://team-api.18f.gov/public/api/locations/'
     cache: false
-    authentication_scheme: hmac
-    authentication_env_var_name: HMAC_KEY
   - data: projects_raw
     json: 'https://team-api.18f.gov/public/api/projects/'
     cache: false

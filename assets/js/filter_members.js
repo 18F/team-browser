@@ -43,9 +43,9 @@ function hidePeopleWithoutAll(attr_name, demanded) {
 
 // temporary functions to hide people who are not current employees
 function hidePeopleWhoHaveNotStarted() {
-  $(".has_not_started").remove();
+  $(".has-not-started").remove();
 };
 
 function hidePeopleWhoHaveLeft() {
-  $(".has_left").remove();
+  $(".has-left").remove();
 };
