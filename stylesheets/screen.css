@@ -860,12 +860,10 @@ header dl dd ul li:last-of-type::after{ content: ""; }
 	line-height: 1.25em;
 }
 
-.layout-team-api .filters-results .results h1{
-	font-size: 14px;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	color: #555;
+.layout-team-api .filters-results .results .wrapper {
+	padding-top: 20px;
 }
+
 
 .layout-team-api .filters-results .filters h1,
 .layout-team-api .filters-results .results form{
