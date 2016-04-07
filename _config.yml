@@ -102,6 +102,7 @@ defaults:
       edit_info:
         repo: 18F/team-browser
         branch: master
+      hide_edit_link: true  
   - scope:
       path: "private"
       type: pages
@@ -109,6 +110,7 @@ defaults:
       edit_info:
         repo: 18F/team-browser-pages-private
         prefix: _pages/private/
+      hide_edit_link: true  
 
 editor_url: https://github.com/
 midas_url: "https://openopps.digitalgov.gov"
