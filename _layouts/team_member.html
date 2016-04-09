@@ -1,7 +1,7 @@
 ---
 layout: team-show
 category: profile
-title: 18F - {{ member.full_name }}
+title: 18f - {{ member.full_name }}
 ---
 
 {% assign member = page.team_member %}
@@ -79,7 +79,7 @@ title: 18F - {{ member.full_name }}
           <ol>
             {% for wg in member.working-groups | sort:"name" %}
             <li>
-              <!--<a href="{{ site.baseurl }}/wg/{{ wg.name | canonicalize }}">{{ wg.full_name }}</a>-->
+              <a href="{{ site.baseurl }}/wg/{{ wg.name | canonicalize }}">{{ wg.full_name }}</a>
             </li>
             {% endfor %}
           </ol>
