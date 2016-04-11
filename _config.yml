@@ -69,12 +69,12 @@ assets:
   cache: true
 
 # use where a full URL is appropriate (e.g. RSS, OG tags)
-url: https://team-browser.18f.gov
+url: https://team.18f.gov
 
 # metadata
 title: 18F Team Browser
 description: "The go-to place for all team information "
-generated_page_title_format: '%s &mdash; 18F team-browser'
+# generated_page_title_format: '%s &mdash; 18F team-browser'
 
 # private data
 private_data_path: _data/private
