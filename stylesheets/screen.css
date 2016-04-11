@@ -1,3 +1,5 @@
+/* @override http://127.0.0.1:4000/stylesheets/screen.css */
+
 /* @override http://localhost:4000/stylesheets/screen.css */
 
 /* @override http://127.0.0.1:4000/stylesheets/screen.css */
@@ -1269,6 +1271,24 @@ a[id]{
 		font-size: 21px;
 		line-height: 1.3em;
 	}
+}
+
+.no-results{
+	background: #f9f6ea;
+	padding: 1em;
+	border-radius: 3px;
+	margin-bottom: 1em;
+	border: 1px solid goldenrod;
+}
+
+.no-results a{
+	color: #9f4215;
+	text-decoration: underline;
+}
+
+.no-results a:hover{
+	text-decoration: none;
+	color: #cb4200;
 }
 
 .page .page-title+h2{ margin-top: 20px; }
