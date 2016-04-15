@@ -1,4 +1,5 @@
 function filter_members() {
+   $('.no-results').hide();
    $('article.person').show();
 
    // This can be attached to a checkbox in the future, but for now, will filter out all former members and those who have not yet started
@@ -19,7 +20,7 @@ function filter_members() {
      hidePeopleWithoutAll('projects', params['projects']);
    };
 
-   var resultsCount = $('article.person').length;
+   var resultsCount = $('article.person').filter(":visible").length;
 
    // show no results message if there are no results
    if (resultsCount == 0) {
@@ -31,7 +32,7 @@ function hidePeopleNotInOneOf(locations) {
   var locations = locations.split(',');
   $('article.person').each(function() {
     if (locations.indexOf($(this).attr('data-location')) == -1) {
-      $(this).remove();
+      $(this).hide();
     };
   });
 };
@@ -43,7 +44,7 @@ function hidePeopleWithoutAll(attr_name, demanded) {
     var has = $(this).attr('data-' + attr_name).split(',');
     demanded.forEach(function(needed) {
       if (has.indexOf(needed) == -1) {
-        person.remove();
+        person.hide();
       };
     });
   });
