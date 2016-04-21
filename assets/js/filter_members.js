@@ -1,4 +1,5 @@
 function filter_members() {
+   $('.no-results').hide();
    $('article.person').show();
 
    // This can be attached to a checkbox in the future, but for now, will filter out all former members and those who have not yet started

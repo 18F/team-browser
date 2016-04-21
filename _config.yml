@@ -99,16 +99,16 @@ defaults:
     values:
       layout: "bare"
       edit_info:
-        repo: 18F/team-browser
-        branch: master
+        repo: 18F/team-api.18f.gov/edit/master/_data/team/
+        branch: team-edits
       hide_edit_link: true  
   - scope:
       path: "private"
       type: pages
     values:
       edit_info:
-        repo: 18F/team-browser-pages-private
-        prefix: _pages/private/
+        repo: 18F/team-api.18f.gov/edit/master/_data/team/
+        branch: team-edits
       hide_edit_link: true  
 
 editor_url: https://github.com/
@@ -134,6 +134,8 @@ github:
   repository: "team-browser"
   organization: "18F"
   default_branch: "18f-pages"
+  api_repository: "team-api.18f.gov"
+  api_default_branch: "team-edits"
 
 jekyll_get:
   - data: team_raw
