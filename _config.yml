@@ -99,16 +99,16 @@ defaults:
     values:
       layout: "bare"
       edit_info:
-        repo: 18F/team-api.18f.gov/edit/master/_data/team/
-        branch: team-edits
+        repo: 18F/team-browser
+        branch: master
       hide_edit_link: true  
   - scope:
       path: "private"
       type: pages
     values:
       edit_info:
-        repo: 18F/team-api.18f.gov/edit/master/_data/team/
-        branch: team-edits
+        repo: 18F/team-browser-pages-private
+        prefix: _pages/private/
       hide_edit_link: true  
 
 editor_url: https://github.com/
