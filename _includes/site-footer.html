@@ -9,8 +9,8 @@
           Discuss this page in <span class="slack">Slack</span>
         </a>
       {% endif %}
-      {% unless page.hide_edit_link %}
-      <a class="button button-edit" href="https://github.com/{{ site.github.organization }}/{{ site.github.repository }}/edit/{{ site.github.default_branch }}/{{ page.path }}" target="_blank">Edit this page</a>{% endunless %}
+      {% if page.layout == 'team-show' %}
+      <a class="button button-edit" href="https://github.com/{{ site.github.organization }}/{{ site.github.api_repository }}/edit/{{ site.github.api_default_branch }}/_data/team/{{ page.team_member.name }}.yml" target="_blank">Update this team member</a>{% endif %}
       <a class="button button-issue" href="https://github.com/{{ site.github.organization }}/{{ site.github.repository }}/issues/" target="_blank">File an issue</a>
     </nav>          
   </div>

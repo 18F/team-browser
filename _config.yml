@@ -134,6 +134,8 @@ github:
   repository: "team-browser"
   organization: "18F"
   default_branch: "18f-pages"
+  api_repository: "team-api.18f.gov"
+  api_default_branch: "team-updates"
 
 jekyll_get:
   - data: team_raw
