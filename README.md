@@ -2,7 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/18F/team-browser/badges/gpa.svg)](https://codeclimate.com/github/18F/team-browser)
 [![Test Coverage](https://codeclimate.com/github/18F/team-browser/badges/coverage.svg)](https://codeclimate.com/github/18F/team-browser)
 
-A human-friendly web interface to the [data](https://team-api.18f.gov/public/api/) served by the [Team API Server](https://github.com/18f/team-api-server).
+A human-friendly web interface to the [data](https://team-api.18f.gov/public/api/) served by the [Team API Server](https://github.com/18f/team-api-server). For now the browser reads only public data.
 
 ## Serving locally
 
