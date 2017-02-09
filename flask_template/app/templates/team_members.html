@@ -1,0 +1,23 @@
+{% for member in members %}
+  {% assign has_not_started = member.start_date | after_today %}
+  {% assign has_left = member.end_date | before_today %}
+    <article class="person {% if has_not_started %} has-not-started{% elsif has_left %} has-left{% endif %}"
+     data-location="{{ member.location }}"
+     data-skills="{{ member.skills | map: 'slug' | join: ',' }}"
+     data-interests="{{ member.interests | map: 'slug' | join: ',' }}"
+     data-projects="{{ member.projects | map: 'name' | join: ',' }}" 
+     >
+
+     {% assign photo_exists = member | photo_exists:site %}
+
+        <a href="{{ site.baseurl }}/team/{{ member.name | canonicalize }}">
+        {{ member.full_name }} 
+        <img class="team-member-thumb"
+         src="{{ member | photo_or_placeholder:site }}"
+          alt="{% if photo_exists %}{{member.full_name}}
+               {% else %}
+               18F logo ({{ member.full_name }} photo missing)
+             {% endif %}">
+       </a>
+    </article>
+{% endfor %}

@@ -1,0 +1,90 @@
+---
+layout: team-show
+category: profile
+---
+
+{% assign member = page.team_member %}
+
+<main role="main" class="h-card page">
+  <div class="wrapper">
+    <header>
+      <h1 class="p-name">{{ member.full_name }}</h1>
+      <img class="u-photo" src="{{ member | photo_or_placeholder:site}}"
+       alt="Photo of {{ member.full_name }}" />
+    </header>
+    <dl>
+      {% if member.email %}
+      <dt class="email">Email</dt>
+      <dd class="email"><a class="u-email" href="mailto:{{ member.email }}">{{ member.email }}</a></dd>
+      {% endif %}
+      {% if member.github %}
+      <dt class="github">GitHub</dt>
+      <dd class="github"><a class="u-github" href="https://github.com/{{ member.github }}">{{ member.github }}</a></dd>
+      {% endif %}
+      {% if member.slack %}
+      <dt class="slack">18F Slack</dt>
+      <dd class="slack"><a class="u-slack" href="https://18f.slack.com/team/{{ member.slack }}">{{ member.slack }}</a></dd>
+      {% endif %}
+      {% if member.location %}
+      <dt class="office">Office</dt>
+      <dd class="office"><a class="u-office" href="{{ site.baseurl }}/?location={{ member.location }}">{{ member.location }}</a></dd>
+      {% endif %}
+
+        {% if member.okrs %}
+        <dt class="okrs">OKRs</dt>
+        <dd class="okrs"><a class="u-okrs" href="{{ member.okrs }}">Objectives and Key Results</a></dd>
+        {% endif %}
+
+        {% if member.projects %}
+        <dt class="projects">Projects</dt>
+        <dd class="projects">
+          <ol>
+            {% for proj in member.projects | sort:"name" %}
+            <li>
+              <a href="{{ site.baseurl }}/?projects={{ proj.name | canonicalize }}">{{ proj.full_name }}</a>
+            </li>
+            {% endfor %}
+          </ol>
+        </dd>
+        {% endif %}
+
+        {% if member.skills %}
+        <dt class="skills">Skills</dt>
+        <dd class="skills">
+          <ol>
+            {% for skill in member.skills %}
+            <li><a href="{{ site.baseurl}}/?skills={{ skill.slug | cgi_escape }}">{{ skill.name }}</a></li>
+            {% endfor %}
+          </ol>
+        </dd>
+        {% endif %}
+
+        {% if member.interests %}
+        <dt class="interests">Interests</dt>
+        <dd class="interests">
+          <ol>
+            {% for interest in member.interests %}
+            <li>
+              <a href="{{ site.baseurl }}/?interests={{ interest.slug | cgi_escape }}">{{ interest.name }}</a>
+            </li>
+            {% endfor %}
+          </ol>
+        </dd>
+        {% endif %}
+
+        {% if member.working-groups %}
+        <dt class="working-groups">Working Groups</dt>
+        <dd class="working-groups">
+          <ol>
+            {% for wg in member.working-groups | sort:"name" %}
+            <li>
+              <a href="{{ site.baseurl }}/wg/{{ wg.name | canonicalize }}">{{ wg.full_name }}</a>
+            </li>
+            {% endfor %}
+          </ol>
+        </dd>
+        {% endif %}
+
+      </dl>
+    </div>
+  </main>

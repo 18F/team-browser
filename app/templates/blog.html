@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Information form">
+<meta name="author" content="email@website.com"> <!-- email goes here! -->
+
+<title>The News Literary Project</title>
+
+</head>
+<body>
+
+
+{% filter markdown %}
+Your Markdown
+=============
+#Schools are doing better with NLP!
+
+This school is totally doing better
+{% endfilter %}
+
+ <!-- jQuery -->
+<script src="{{url_for('static',filename='js/jquery.js') }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<!-- Plugin JavaScript -->
+<script src="{{url_for('static', filename='js/jquery.easing.min.js' ) }}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{{ url_for('static', filename='js/grayscale.js')}}"></script>
+<script src="{{url_for('static', filename='js/navbarcustom.js')}}"></script>
+
+<script>
+</body>
+</html>
+

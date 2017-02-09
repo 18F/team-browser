@@ -1,0 +1,147 @@
+.hdr {
+  width: 95%;
+  position: relative;
+  margin: 25px auto;
+}
+.hdr__logo-link {
+  width: 200px;
+  display: inline-block;
+}
+.hdr__logo-img {
+  width: 100%;
+}
+.desktop-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.desktop-nav__link {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+  margin-left: 33px;
+  border-bottom: 2px solid #fff;
+  line-height: 1;
+}
+.desktop-nav__link:hover, .desktop-nav__link:focus {
+  color: #000;
+  text-decoration: none;
+  border-color: #000;
+}
+.main-nav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.main-nav__link {
+  display: inline-block;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    margin-left: 16px;
+    border-bottom: 3px solid #fff;
+    line-height: 1.1;
+    font-weight: 600;
+}
+.main-nav__link:hover, .main-nav__link:focus {
+  color: #000;
+  text-decoration: none;
+  border-color: #000;
+}
+.main-nav__link--donate{
+  color: green;
+}
+.main-nav__link--donate:hover
+.main-nav__link--donate:focus  {
+  color: green;
+  border-color: green;
+}
+
+.main-story {
+  width: 100%;
+  position: relative;
+}
+.main-story--1 {
+  background: url(/static/img/hero-1.jpg) no-repeat center;
+  background-size: cover;
+  /* The old syntax, deprecated and prefixed, for old browsers */
+}
+.main-story--1:before,
+.main-story--2:before {
+    conten ";
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: -webkit-radial-gradient(top center, ellipse cover, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.5) 100%);
+}
+.main-story--2 {
+  background-color: #127591;
+  padding-top: 3%;
+}
+.main-story--3 {
+  background: url(/static/img/hero-3.jpg) no-repeat center;
+  background-size: cover;
+}
+.main-story__copy--2 {
+  color: #fff;
+  padding: 3% 2% 3%;
+}
+.main-story__copy--1,
+.main-story__copy--3 {
+  color: #fff;
+  padding: 20% 2% 3%;
+  background: -prefix-linear-gradient(top, rgba(0,0,0,0),
+    rgba(0,0,0,1)), url(http://foo.com/image.jpg);
+
+  /* The new syntax needed by standard-compliant browsers (Opera 12.1,
+     IE 10, Firefox 16, Chrome 26, Safari 6.1), without prefix */
+  background: linear-gradient(to bottom, rgba(0,0,0,0),
+    rgba(0,0,0,1)), url(http://foo.com/image.jpg);
+}
+.main-story__hed {
+  font-family: times;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+.main-story__hed-img {}
+.main-story__dek {
+  max-width: 910px;
+  font-family: Arial, sans-serif;
+  font-size: 31px;
+  line-height: 1.4;
+  font-weight: 400;
+  padding-top: 11px;
+}
+.main-story__link {
+  margin-top: 30px;
+  display: inline-block;
+  border-radius: 6px;
+}
+.main-story__link:hover,
+.main-story__link:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.main-story__link-text {}
+.main-story__link-arrow {}
+.ftr {
+  padding-bottom: 30px;
+}
+.ftr__standin-img--1 {
+  display: block;
+  width: 100%;
+}
+.ftr__standin-img--2 {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Information form">
+<meta name="author" content="email@website.com"> <!-- email goes here! -->
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/universal.css') }}" rel="stylesheet">
+
+<title>The News Literary Project</title>
+
+</head>
+<body>
+
+
+<div class="hdr">
+  <a class="hdr__logo-link" href="/">
+    <img class="hdr__logo-img" src="{{ url_for('static', filename='img/hdr-logo.png') }}" alt="logo">
+  </a>
+  <div class="desktop-nav">
+    <a href="#" class="desktop-nav__link">Newsletter</a>
+    <a href="#" class="desktop-nav__link">Blogs</a>
+    <a href="#" class="desktop-nav__link">In the News</a>
+    <a href="#" class="desktop-nav__link">Journalist Fellows</a>
+    <a href="#" class="desktop-nav__link">Contact</a>
+    <a href="#" class="desktop-nav__link">Support</a>
+  </div>
+  <div class="main-nav">
+    <a href="#" class="main-nav__link">For Students</a>
+    <a href="#" class="main-nav__link">For Educators</a>
+    <a href="#" class="main-nav__link">For Journalists</a>
+    <a href="#" class="main-nav__link">Services</a>
+    <a href="#" class="main-nav__link">checkology Virtual Classroom</a>
+    <a href="https://act.myngp.com/Forms/6853916782416101376" class="main-nav__link main-nav__link--donate">Donate</a>
+  </div>
+</div>
+<div class="main">
+  <div class="main-story main-story--1">
+    <div class="main-story__copy main-story__copy--1">
+      <div class="main-story__hed">What is news literacy?</div>
+      <div class="main-story__dek">News literacy teaches that all information is not created equal. It helps young people use the aspirational standards of quality journalism to determine what they should trust, share and act on.</div>
+      <a href="#" class="main-story__link">
+        <img src="{{ url_for('static', filename='img/learn_more_button.png') }}" class="main-story__link-arrow" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="main-story main-story--2">
+    <div class="main-story__copy main-story__copy--2">
+      <img class="main-story__hed-img" src="{{ url_for('static', filename='img/checkology-story.png') }}" alt="">
+      <div class="main-story__dek">“The News Literacy Project’s checkologyTM virtual classroom is the most e ective classroom resource I’m aware of to make certain that our students are media savvy for the challenges that await them in the 21st Century.”</div>
+      <div class="main-story__dek">—Eric Nadelstern, the former chief schools officer for the New York City Department of Education</div>
+      <a href="#" class="main-story__link">
+        <img src="{{ url_for('static', filename='img/learn_more_button.png') }}" class="main-story__link-arrow" alt="">
+      </a>
+    </div>
+  </div>
+  <div class="main-story main-story--3">
+    <div class="main-story__copy main-story__copy--3">
+      <div class="main-story__hed">Classroom vists, afterschool programs, and professional development</div>
+      <a href="#" class="main-story__link">
+        <img src="{{ url_for('static', filename='img/learn_more_button.png') }}" class="main-story__link-arrow" alt="">
+      </a>
+    </div>
+  </div>
+</div>
+<div class="ftr">
+  <img class="ftr__standin-img ftr__standin-img--1" src="{{ url_for('static', filename='img/footer-1.png') }}" alt="logo">
+  <img class="ftr__standin-img ftr__standin-img--2" src="{{ url_for('static', filename='img/footer-2.png') }}" alt="logo">
+</div>
+
+<!-- jQuery -->
+<script src="{{url_for('static',filename='js/jquery.js') }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- <script src="{{url_for('static', filename='js/bootstrap.min.js') }}"></script> -->
+
+<!-- Plugin JavaScript -->
+<script src="{{url_for('static', filename='js/jquery.easing.min.js' ) }}"></script>
+
+<!-- Custom Theme JavaScript -->
+<!-- <script src="{{ url_for('static', filename='js/grayscale.js')}}"></script> -->
+<!-- <script src="{{url_for('static', filename='js/navbarcustom.js')}}"></script> -->
+
+<script>
+</body>
+</html>
