@@ -63,11 +63,11 @@ github:
     api_repository: team-api.18f.gov
     api_default_branch: team-updates
 jekyll_get:
-    - {data: team_raw, json: 'https://team-api.18f.gov/public/api/team/', cache: false}
-    - {data: locations_raw, json: 'https://team-api.18f.gov/public/api/locations/', cache: false}
-    - {data: projects_raw, json: 'https://team-api.18f.gov/public/api/projects/', cache: false}
-    - {data: departments_raw, json: 'https://team-api.18f.gov/public/api/departments/', cache: false}
-    - {data: working_groups_raw, json: 'https://team-api.18f.gov/public/api/working-groups/', cache: false}
-    - {data: guilds_raw, json: 'https://team-api.18f.gov/public/api/guilds/', cache: false}
-    - {data: skills_raw, json: 'https://team-api.18f.gov/public/api/skills/', cache: false}
-    - {data: interests_raw, json: 'https://team-api.18f.gov/public/api/interests/', cache: false}
+    - {data: team_raw, json: 'http://127.0.0.1:4001/public/api/team/', cache: false}
+    - {data: locations_raw, json: 'http://127.0.0.1:4001/public/api/locations/', cache: false}
+    - {data: projects_raw, json: 'http://127.0.0.1:4001/public/api/projects/', cache: false}
+    - {data: departments_raw, json: 'http://127.0.0.1:4001/public/api/departments/', cache: false}
+    - {data: working_groups_raw, json: 'http://127.0.0.1:4001/public/api/working-groups/', cache: false}
+    - {data: guilds_raw, json: 'http://127.0.0.1:4001/public/api/guilds/', cache: false}
+    - {data: skills_raw, json: 'http://127.0.0.1:4001/public/api/skills/', cache: false}
+    - {data: interests_raw, json: 'http://127.0.0.1:4001/public/api/interests/', cache: false}
