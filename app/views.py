@@ -19,10 +19,10 @@ def personal_detail(person):
     person = {
         "github":"EricSchles",
         "office":"new york",
-        "Skills":"few",
+        "skills":"few",
         "interests":"everything"
         }
-    return render_template("personal_detail.html",person=person)
+    return jsonify({"person": person})
 
 
 @app.route("/search-results", methods=["GET","POST"])
