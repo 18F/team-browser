@@ -10,3 +10,4 @@ set_hmac_auth.sh
 set_hmac_key.sh
 vagrant/.vagrant/
 *.swp
+*.pyc
