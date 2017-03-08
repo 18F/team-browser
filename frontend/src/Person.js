@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
-/* Person represents the detail view of each team member.
+/* This file renders the detail view of each team member.
 */
+
+//TODO: Pass state from App component request to this as props
 class Person extends Component {
   render () {
     return (
@@ -11,3 +13,5 @@ class Person extends Component {
     )
   }
 }
+
+export default Person;
