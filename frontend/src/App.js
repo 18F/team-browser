@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { Person } from './Person.js';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
 class App extends Component {
+/* App should represent all available filters and team members on load.
+ * It should show and hide team members as filters are selected.
+ */
 constructor(props) {
     super(props);
     this.state = {person: { github: "stranger" }};
