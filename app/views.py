@@ -9,7 +9,23 @@ from datetime import datetime
 @app.route("/",methods=["GET","POST"])
 @app.route("/index", methods=["GET","POST"])
 def index():
-    return render_template("index.html")
+    #add db look up here
+    #stubbed for now
+    people = {
+        "EricSchles" : {
+            "github":"EricSchles",
+            "office":"new york",
+            "skills":"few",
+            "interests":"everything"
+        },
+        "hbillings": {
+            "github": "hbillings",
+            "office": "denver",
+            "skills": "slapstick comedy",
+            "interests": "cats"
+        }
+    }
+    return jsonify({"teammates": people})
 
 
 @app.route("/personal_detail/<person>", methods=["GET", "POST"])

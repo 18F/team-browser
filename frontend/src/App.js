@@ -13,11 +13,12 @@ import axios from 'axios';
 // TODO: Add teammate component and click handler
 
 function Teammates(props) {
-  console.log("props.people: ", props.people);
-  var teammates = Object.keys(props.people).map(function (key) {
-    var person = props.people[key];
+  console.log("props.teammates: ", props);
+  var teammates = [];
+  /*var teammates = Object.keys(props.teammates).map(function (key) {
+    var person = props.teammates[key];
     return ( <Teammate person={person} /> );
-  });
+  });*/
   return (
     <section className="teammates">
     { teammates }
@@ -26,46 +27,35 @@ function Teammates(props) {
 }
 
 
-function Teammate(props) {
+/*function Teammate(props) {
   console.log("Teammate props: ", props);
   return (
     <h3>{ props.person.github }</h3>
   )
-}
+}*/
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      teammates: {
-        person: { github: "stranger" }
-      }
-    };
+      teammates: {}
+    }
+
     var self = this;
-    /* placeholder call: do a get request for all of the data */
-    axios.get('http://127.0.0.1:5000/personal_detail/EricSchles')
+    // this should definitely not be hardcoded
+    axios.get('http://127.0.0.1:5000/')
        .then(function(response){
-          //console.log("response = ", response);
-          //will be response.data.teammates; just use this for now
-          self.setState({"teammates": response.data.person});
+          console.log("response = ", response);
+          self.setState({"teammates": response.data.teammates});
+          console.log("original state: ", self.state);
        });
-    // old example stuff
-    this.gotClick = this.gotClick.bind(this);
-  }
-  //old example stuff
-  gotClick() {
-    var self = this;
-    axios.get('http://127.0.0.1:5000/personal_detail/EricSchles')
-         .then(function(response){
-            self.setState({"person": response.data.person});
-         });
   }
   render() {
     var self = this;
+    //console.log("state", self.state.teammates.people);
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React, { self.state.teammates.github}</h2>
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
@@ -73,7 +63,7 @@ class App extends Component {
         </p>
         <section className="filters">
         </section>
-        <Teammates people={self.state.teammates} />
+        <Teammates teammates={self.state.teammates} />
       </div>
     );
   }
