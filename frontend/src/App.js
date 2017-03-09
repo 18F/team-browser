@@ -20,14 +20,11 @@ class App extends Component {
     // this should definitely not be hardcoded
     axios.get('http://127.0.0.1:5000/')
        .then(function(response){
-          console.log("response = ", response);
           self.setState({"teammates": response.data.teammates});
-          console.log("original state: ", self.state);
        });
   }
   render() {
     var self = this;
-    //console.log("state", self.state.teammates.people);
     return (
       <div className="App usa-grid">
         <header className="usa-header usa-header-basic" role="banner">

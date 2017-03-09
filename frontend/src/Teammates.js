@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './uswds-1.0.0/css/uswds.min.css';
 
+// TODO: Add teammate component click handler
 function Teammates(props) {
-  console.log("props.teammates: ", props.teammates);
-  //var teammates = [];
   var teammates = Object.keys(props.teammates).map(function (key) {
     var person = props.teammates[key];
     return ( <Teammate person={person} /> );
