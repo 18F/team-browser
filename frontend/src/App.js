@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Person } from './Person.js';
-import logo from './logo.svg';
+import Teammates from './Teammates.js';
+import './uswds-1.0.0/css/uswds.min.css';
 import './App.css';
 import axios from 'axios';
 
@@ -8,31 +9,6 @@ import axios from 'axios';
  * It should show and hide team members as filters are selected.
  */
 
-// TODO: Add checkbox container renderer
-// TODO: Add checkbox renderer and click handler
-// TODO: Add teammate component and click handler
-
-function Teammates(props) {
-  console.log("props.teammates: ", props);
-  var teammates = [];
-  /*var teammates = Object.keys(props.teammates).map(function (key) {
-    var person = props.teammates[key];
-    return ( <Teammate person={person} /> );
-  });*/
-  return (
-    <section className="teammates">
-    { teammates }
-    </section>
-  )
-}
-
-
-/*function Teammate(props) {
-  console.log("Teammate props: ", props);
-  return (
-    <h3>{ props.person.github }</h3>
-  )
-}*/
 class App extends Component {
   constructor(props) {
     super(props);
@@ -53,15 +29,13 @@ class App extends Component {
     var self = this;
     //console.log("state", self.state.teammates.people);
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-          <button type="button" onClick={self.gotClick}>Go</button>
-        </p>
-        <section className="filters">
+      <div className="App usa-grid">
+        <header className="usa-header usa-header-basic" role="banner">
+          <div className="usa-nav-container">
+            <h1>18F Skills Browser</h1>
+          </div>
+        </header>
+        <section className="filters usa-grid">
         </section>
         <Teammates teammates={self.state.teammates} />
       </div>
