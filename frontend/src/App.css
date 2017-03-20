@@ -2,3 +2,11 @@
   background-color: #112e51;
   min-height: 20px;
 }
+
+.filters--group {
+  background-color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+}
