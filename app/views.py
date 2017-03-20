@@ -15,14 +15,14 @@ def index():
         "EricSchles" : {
             "github":"EricSchles",
             "office":"new york",
-            "skills":"few",
-            "interests":"everything"
+            "skills":["few"],
+            "interests":["everything"]
         },
         "hbillings": {
             "github": "hbillings",
             "office": "denver",
-            "skills": "slapstick comedy",
-            "interests": "cats"
+            "skills": ["slapstick comedy"],
+            "interests": ["cats"]
         }
     }
     return jsonify({"teammates": people})
